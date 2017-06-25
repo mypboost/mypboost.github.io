@@ -1,22 +1,13 @@
-// import React from 'react';
-// import {render} from 'react-dom';
-//
-// import './style.css'
-//
-// class App extends React.Component {
-//   render () {
-//     return <p> Hello React!</p>;
-//   }
-// }
-//
-// render(<App/>, document.getElementById('app'));
+import React from 'react'
+import { render } from 'react-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import App from './routes'
+import store from './reducers/store'
 
-import PageContainer from './containers/PageContainer';
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-
-ReactDOM.render(
-  <PageContainer />,
-  document.getElementById('page')
-);
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)

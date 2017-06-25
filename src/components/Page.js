@@ -1,28 +1,19 @@
 import React from 'react';
-import C1 from './Component1'
+import PropTypes from 'prop-types';
+import '../style/page.scss';
 
-const Page = React.createClass({
 
-  propTypes: {
+class Page extends React.Component {
 
-  },
-  getDefaultProps() {
-    return {
 
-    };
-  },
-
-  render(){
+  render() {
     return (
-      <C1 />
+      <main>
+        {this.props.children}
+      </main>
     )
   }
-
-})
-
-// function Page() {
-//   return <C1 />;
-// }
+}
 
 
 export default Page;
