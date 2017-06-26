@@ -4,3 +4,10 @@ export const updateSlider = (group, name, value) => ({
   name,
   value
 })
+
+
+export const updateField = ( name, value) => ({
+  type: 'UPDATE_FIELD',
+  name,
+  value
+})

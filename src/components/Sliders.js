@@ -7,10 +7,9 @@ import Immutable from 'immutable';
 
 class Sliders extends React.Component {
 
-  getRow(name, value) {
+  createRow(values, name) {
     const minValue = 0;
     const maxValue = 1000;
-
 
     return (
       <Slider
@@ -18,23 +17,30 @@ class Sliders extends React.Component {
         name={name}
         minValue={minValue}
         maxValue={maxValue}
-        value={value}
+        value={values.get("value")}
+        className={values.get("className")}
+        onSliderChange={this.props.onSliderUpdate}
+        group={this.props.group}
       />
     )
   }
 
-  render() {
-
+  rows(sliders){
     let rows = Immutable.List([])
 
-    this.props.sliders.forEach((slider) => {
-      rows = rows.push(this.getRow(slider.name, slider.value));
-
+    sliders.forEach((value, key) => {
+      rows = rows.push(this.createRow(value, key));
     })
 
+    return rows;
+  }
+
+
+
+  render() {
     return (
       <div>
-        {rows}
+        {this.rows(this.props.sliders)}
       </div>
     )
   }

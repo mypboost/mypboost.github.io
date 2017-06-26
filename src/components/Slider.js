@@ -7,21 +7,23 @@ import '../style/slider.scss';
 class Slider extends React.Component {
 
   setValue(newValue) {
-    //
+    this.props.onSliderChange(this.props.group, this.props.name, newValue);
   }
 
   render() {
-    let {name, value} = this.props;
+    let {name, value, minValue, maxValue, className} = this.props;
 
     return (
       <div>
         <h3>{name}</h3>
+        <p>{value}/{maxValue}</p>
         <ReactSlider
           withBars
-          min={0}
-          max={1000}
+          min={minValue}
+          max={maxValue}
           defaultValue={value}
-          onChange={this.setValue}
+          onChange={this.setValue.bind(this)}
+          className={"slider " + className}
         />
       </div>
     )
@@ -29,11 +31,13 @@ class Slider extends React.Component {
 }
 
 Slider.propTypes = {
-  changeSliderValue: PropTypes.func,
+  onSliderChange: PropTypes.func,
   minValue: PropTypes.number.isRequired,
   maxValue: PropTypes.number.isRequired,
   value: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
+  group: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
 }
 
 export default Slider;

@@ -1,10 +1,40 @@
+@import "./_colours";
+
 .slider {
-  background-color: blue;
-  height: 1px;
+  height: 8px;
 }
 
 .handle {
-  background-color: red;
-  height: 10px;
+  background-color: #dadada;
+  height: 15px;
   width: 10px;
+  top: -4px;
+}
+
+.purple-slider {
+  background-color: $purple;
+}
+
+.yellow-slider {
+  background-color: $yellow;
+}
+
+.pink-slider {
+  background-color: $pink;
+}
+
+.orange-slider {
+  background-color: $orange;
+}
+
+.red-slider {
+  background-color: $red;
+}
+
+.blue-slider {
+  background-color: $blue;
+}
+
+.lime-slider {
+  background-color: $lime;
 }

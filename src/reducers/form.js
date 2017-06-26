@@ -1,12 +1,21 @@
 const form = (state, action) => {
   switch (action.type) {
-    // case 'DECREMENT_COUNTER':
-    //   return state - 1;
-    // case 'INCREMENT_COUNTER':
-    //   return state + 1;
+    case 'UPDATE_SLIDER':
+      return updateSlider(state, action.group, action.name, action.value);
+    case 'UPDATE_FIELD':
+      return updateField(state, action.name, action.value);
     default:
       return state;
   }
 }
+
+const updateSlider = (state, group, name, value) => {
+  return state.setIn([group, name, "value"], value);
+}
+
+const updateField  = (state, name, value) => {
+  return state.setIn(["fields", name, "value"], value);
+}
+
 
 export default form;

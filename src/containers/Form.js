@@ -1,15 +1,15 @@
 import { connect } from 'react-redux'
-// import { decrementCounter, incrementCounter } from '../actions'
+import { updateSlider, updateField } from '../actions'
 import FormComponent from '../components/Form'
 
-
 const mapStateToProps = (state) => ({
-  currentSliders: state.form.currentSliders
+  currentSliders: state.getIn(["form", "currentSliders"]),
+  goalSliders: state.getIn(["form", "goalSliders"])
 })
 
 const mapDispatchToProps = {
-  // onDecrementClick: decrementCounter,
-  // onIncrementClick: incrementCounter
+  onSliderUpdate: updateSlider,
+  onFieldUpdate: updateField,
 }
 
 const Form = connect(
