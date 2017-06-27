@@ -3,15 +3,23 @@ import PropTypes from 'prop-types';
 import Page from './page'
 import Sliders from './Sliders';
 import FormElement from './FormElement';
+import FormInput from './FormInput';
 
 class Form extends React.Component {
 
   render() {
+    const { name, age, sex, email } = this.props.fields.toJS()
     return (
       <Page>
-        <FormElement name="Your Full Name" info="i">
-           <input onChange={this.props.onFieldUpdate} />
-        </FormElement>
+        <FormElement
+          fieldTitle={name.fieldTitle}
+          info={name.info}
+          value={name.value}
+          placeholder={name.placeholder}
+          name="name"
+          onFieldUpdate={this.props.onFieldUpdate}
+          component={<FormInput />}
+        />
 
         <h2>Current Sliders</h2>
         <Sliders

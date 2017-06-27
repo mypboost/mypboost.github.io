@@ -4,7 +4,8 @@ import FormComponent from '../components/Form'
 
 const mapStateToProps = (state) => ({
   currentSliders: state.getIn(["form", "currentSliders"]),
-  goalSliders: state.getIn(["form", "goalSliders"])
+  goalSliders: state.getIn(["form", "goalSliders"]),
+  fields: state.getIn(["form", "fields"])
 })
 
 const mapDispatchToProps = {
