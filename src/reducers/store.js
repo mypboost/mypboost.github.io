@@ -16,29 +16,18 @@ const defaultSliders = Immutable.fromJS({
 const defaultFields = Immutable.fromJS({
   "name": {
     "value": "",
-    "fieldTitle": "Your Full Name",
-    "info": "i",
-    "placeholder": "Your Name",
     "errors": {}
   },
   "age": {
     "value": "",
-    "fieldTitle": "Your Age",
-    "info": "i",
-    "placeholder": "Your Age",
     "errors": {}
   },
   "sex": {
     "value": "",
-    "fieldTitle": "Your Sex",
-    "info": "i",
     "errors": {}
   },
   "email": {
     "value": "",
-    "fieldTitle": "Your Email Address",
-    "info": "i",
-    "placeholder": "your@email.com",
     "errors": {}
   }
 })

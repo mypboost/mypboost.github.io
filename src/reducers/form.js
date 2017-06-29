@@ -14,7 +14,6 @@ const updateSlider = (state, group, name, value) => {
 }
 
 const updateField  = (state, name, value) => {
-  console.log(state.getIn(["fields", name, "value"]))
   return state.setIn(["fields", name, "value"], value);
 }
 
