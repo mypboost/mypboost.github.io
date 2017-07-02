@@ -1,5 +1,21 @@
 @import './_colours';
 
-body {
-  background-color: white;
+.page {
+  border: 1px solid white;
+  max-width: 700px;
+  box-sizing: border-box; 
+  margin: auto;
+  padding: 50px;
+}
+
+.large-header {
+  color: $lime;
+  font-size: 43px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.body {
+  color: white;
+  text-align: center;
 }

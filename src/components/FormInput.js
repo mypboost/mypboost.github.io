@@ -8,20 +8,20 @@ class FormInput extends React.Component {
   }
 
   render() {
-    const { name, value, placeholder } = this.props
+    const { fieldName, currentValue, placeholder } = this.props
     return (
       <input 
         placeholder={placeholder}
         onChange={this.onFieldUpdate.bind(this)}
-        value={value}
-        name={name}
+        value={currentValue}
+        name={fieldName}
       />
     )
   }
 }
 
 FormInput.propTypes = {
-  name: PropTypes.string,
+  fieldName: PropTypes.string,
   placeholder: PropTypes.string,
   value: PropTypes.string,
   onChange: PropTypes.func,

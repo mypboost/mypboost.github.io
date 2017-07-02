@@ -24,6 +24,7 @@ class Slider extends React.Component {
           defaultValue={value}
           onChange={this.setValue.bind(this)}
           className={"slider " + className}
+          step={10}
         />
       </div>
     )

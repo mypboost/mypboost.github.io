@@ -4,72 +4,98 @@ import Page from './page'
 import Sliders from './Sliders';
 import FormElement from './FormElement';
 import FormInput from './FormInput';
+import FormSelector from './FormSelector';
+import Divider from './Divider';
 
 class Form extends React.Component {
 
-
-  submitForm(e){
-    e.preventDefault()
-    this.props.history.push('/mypco/build/results.html')
+  submitForm(event){
+    event.preventDefault()
+    this.props.history.push('/results.html')
   }
 
   render() {
     const { name, age, sex, email } = this.props.fields.toJS()
     return (
       <Page>
-        <FormElement
-          fieldTitle="Your Full Name"
-          info="i"
-          value={name.value}
-          placeholder="Your Name"
-          name="name"
-          onFieldUpdate={this.props.onFieldUpdate}
-          component={<FormInput />}
-        />
+        <h2 className="large-header">MYPCO Lite Score Generator</h2> 
+        <p className="body"> 
+          It is a long established fact that a reader will be distracted by the 
+          readable content of a page when looking at its layout. The point of 
+          using Lorem Ipsum is that it has a more-or-less normal distribution 
+        </p>
 
-       <FormElement
-          fieldTitle="Your Age"
-          info="i"
-          value={age.value}
-          placeholder="Your Age"
-          name="age"
-          onFieldUpdate={this.props.onFieldUpdate}
-          component={<FormInput />}
-        />
+        <Divider>
+          Step 1 of 3
+        </Divider>
 
-       <FormElement
-          fieldTitle="Your Sex"
-          info="i"
-          value={sex.value}
-          name="sex"
-          onFieldUpdate={this.props.onFieldUpdate}
-          component={<FormInput />}
-        />
+        <form className="form">
+          <div className="form-element-container">
+            <FormElement
+              fieldTitle="Your Full Name"
+              currentValue={name.value}
+              placeholder="Your Name"
+              fieldName="name"
+              onFieldUpdate={this.props.onFieldUpdate}
+              className="name-input"
+            >
+              <FormInput />
+            </FormElement>
 
-       <FormElement
-          fieldTitle="Your Email Address"
-          info="i"
-          value={email.value}
-          placeholder="you@email.com"
-          name="email"
-          onFieldUpdate={this.props.onFieldUpdate}
-          component={<FormInput />}
-        />
+            <FormElement
+              fieldTitle="Your Age"
+              info="Your age tooltip"
+              id="YourageId"
+              currentValue={age.value}
+              placeholder="Your Age"
+              fieldName="age"
+              onFieldUpdate={this.props.onFieldUpdate}
+              className="age-input"
+            >
+              <FormInput />
+            </FormElement>
 
-        <h2>Current Sliders</h2>
-        <Sliders
-          onSliderUpdate={this.props.onSliderUpdate}
-          sliders={this.props.currentSliders}
-          group={"currentSliders"}
-         />
+            <FormElement
+              fieldTitle="Your Sex"
+              info="Your sex tooltip"
+              id="YoursexId"
+              fieldName="sex"
+              onFieldUpdate={this.props.onFieldUpdate}
+              currentValue={sex.value}
+              component={<FormInput />}
+              className="sex-input"
+            >
+              <FormSelector option="male" />
+              <FormSelector option="female" />
+            </FormElement>
+          
+            <FormElement
+              fieldTitle="Your Email Address"
+              currentValue={email.value}
+              placeholder="you@email.com"
+              fieldName="email"
+              onFieldUpdate={this.props.onFieldUpdate}
+              className="email-input"
+            >
+              <FormInput />
+            </FormElement>
+          </div>
 
-         <h2>Goal Sliders</h2>
-         <Sliders
-           onSliderUpdate={this.props.onSliderUpdate}
-           sliders={this.props.goalSliders}
-           group={"goalSliders"}
+          <h2>Current Sliders</h2>
+          <Sliders
+            onSliderUpdate={this.props.onSliderUpdate}
+            sliders={this.props.currentSliders}
+            group={"currentSliders"}
           />
-      <button onClick={this.submitForm.bind(this)}>futton </button>
+
+          <h2>Goal Sliders</h2>
+          <Sliders
+            onSliderUpdate={this.props.onSliderUpdate}
+            sliders={this.props.goalSliders}
+            group={"goalSliders"}
+            />
+          <button onClick={this.submitForm.bind(this)}>futton </button>
+        </form>
       </Page>
     )
   }

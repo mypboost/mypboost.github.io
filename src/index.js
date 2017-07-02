@@ -2,12 +2,14 @@ import React from 'react'
 import { render } from 'react-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import App from './routes'
+import Routes from './routes'
 import store from './reducers/store'
+
+import './style/main.scss';
 
 render(
   <Provider store={store}>
-    <App />
+    <Routes />
   </Provider>,
   document.getElementById('root')
 )

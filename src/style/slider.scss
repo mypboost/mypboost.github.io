@@ -2,14 +2,21 @@
 
 .slider {
   height: 8px;
+
+  .bar-1 {
+    height: 8px;
+    background-color: white;
+  }
+
+  .handle {
+    background-color: #dadada;
+    height: 15px;
+    width: 10px;
+    top: -4px;
+  }
+
 }
 
-.handle {
-  background-color: #dadada;
-  height: 15px;
-  width: 10px;
-  top: -4px;
-}
 
 .purple-slider {
   background-color: $purple;

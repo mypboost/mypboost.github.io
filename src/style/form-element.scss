@@ -1,0 +1,48 @@
+@import "./_colours";
+
+.form-element-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form-element {
+  .info {
+     margin-bottom: 10px;
+
+    .field-title {
+      display: inline-block;
+      margin-right: 5px;
+    }
+  }
+
+  input {
+    background-color: transparent;
+    border: 1px solid $grey;
+    font-size: 13px;
+    padding: 6px 5px;
+    border-radius: 3px;
+    width: 100%;
+  }
+
+  input::placeholder {
+    color: $grey;
+  }
+}
+
+.name-input {
+  flex: 0 0 75%;
+}
+
+.age-input {
+  flex: 0 0 20%;
+}
+
+.sex-input {
+  flex: 0 0 30%;
+}
+
+.email-input {
+  flex: 0 0 60%;
+}
+

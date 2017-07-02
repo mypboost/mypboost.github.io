@@ -8,9 +8,9 @@ class Page extends React.Component {
 
   render() {
     return (
-      <main>
+      <div className="page">
         {this.props.children}
-      </main>
+      </div>
     )
   }
 }
