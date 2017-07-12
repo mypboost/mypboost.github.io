@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Slider from './Slider';
 import Immutable from 'immutable';
 
-// import '../style/slider.scss';
+import '../style/sliders.scss';
 
 class Sliders extends React.Component {
 
@@ -39,7 +39,7 @@ class Sliders extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="sliders">
         {this.rows(this.props.sliders)}
       </div>
     )

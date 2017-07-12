@@ -8,7 +8,13 @@ class Tooltip extends React.Component {
   getTooltip(id, text) {
     return (
       <div className="tooltip">
-        <i data-tip data-for={id} className="fa fa-info-circle tooltip-icon"></i>
+        <i 
+          data-tip='custom show'
+          data-event='click focus' 
+          data-for={id} 
+          className="fa fa-info-circle tooltip-icon"
+        >
+        </i>
         <ReactTooltip id={id} type='light' effect='solid'>
           <span>{text}</span>
         </ReactTooltip>

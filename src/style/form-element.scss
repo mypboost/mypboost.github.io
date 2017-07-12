@@ -7,6 +7,10 @@
 }
 
 .form-element {
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  text-align: left;
+
   .info {
      margin-bottom: 10px;
 
@@ -39,10 +43,10 @@
 }
 
 .sex-input {
-  flex: 0 0 30%;
+  flex: 0 0 24%;
 }
 
 .email-input {
-  flex: 0 0 60%;
+  flex: 0 0 71%;
 }
 

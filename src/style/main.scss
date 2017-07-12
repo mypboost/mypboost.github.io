@@ -11,29 +11,6 @@ h1, h2, h3, h4, h5, p, a, button, li, ul, span {
 }
 
 .site-header {
-  display: flex;
-  justify-content: center;
   margin: 25px 0 35px;
-
-  .site-header-inner {
-    display: flex;
-    align-items: center;
-
-    .placeholder-logo {
-      height: 60px;
-      width: 45px; 
-      background-color: $lime;
-      display: inline-block; 
-      margin-right: 10px;
-    }
-
-    .site-header-text {
-      color: $lime;
-      font-weight: 500;
-      font-size: 20px;
-      display: inline-block; 
-      letter-spacing: 2px;
-      word-spacing: 3px;
-    }
-  }
+  text-align: center;
 }

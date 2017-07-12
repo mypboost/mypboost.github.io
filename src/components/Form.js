@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Immutable from 'immutable';
+
 import Page from './page'
 import Sliders from './Sliders';
 import FormElement from './FormElement';
 import FormInput from './FormInput';
-import FormSelector from './FormSelector';
+import FormSelection from './FormSelection';
 import Divider from './Divider';
 
 class Form extends React.Component {
@@ -19,15 +21,19 @@ class Form extends React.Component {
     return (
       <Page>
         <h2 className="large-header">MYPCO Lite Score Generator</h2> 
-        <p className="body"> 
+        <p className="body form-intro-text"> 
           It is a long established fact that a reader will be distracted by the 
           readable content of a page when looking at its layout. The point of 
           using Lorem Ipsum is that it has a more-or-less normal distribution 
         </p>
 
-        <Divider>
+        <Divider className="step-1-divider">
           Step 1 of 3
         </Divider>
+
+        <h3 className="section-header section-header-1">
+          Tell us a little about yourself...
+        </h3>
 
         <form className="form">
           <div className="form-element-container">
@@ -45,7 +51,6 @@ class Form extends React.Component {
             <FormElement
               fieldTitle="Your Age"
               info="Your age tooltip"
-              id="YourageId"
               currentValue={age.value}
               placeholder="Your Age"
               fieldName="age"
@@ -58,15 +63,13 @@ class Form extends React.Component {
             <FormElement
               fieldTitle="Your Sex"
               info="Your sex tooltip"
-              id="YoursexId"
               fieldName="sex"
               onFieldUpdate={this.props.onFieldUpdate}
               currentValue={sex.value}
               component={<FormInput />}
               className="sex-input"
             >
-              <FormSelector option="male" />
-              <FormSelector option="female" />
+              <FormSelection options={["Male", "Female"]} />
             </FormElement>
           
             <FormElement
@@ -81,20 +84,49 @@ class Form extends React.Component {
             </FormElement>
           </div>
 
-          <h2>Current Sliders</h2>
+          <Divider className="step-2-divider">
+            Step 2 of 3
+          </Divider>
+
+          <h3 className="section-header section-header-2">
+            {"Where are you at right now?"}
+          </h3>
+      
+          <p className="body section-two-text"> 
+            It is a long established fact that a reader will be distracted by the 
+            readable content of a page when looking at its layout.
+          </p>
+
           <Sliders
             onSliderUpdate={this.props.onSliderUpdate}
             sliders={this.props.currentSliders}
             group={"currentSliders"}
           />
 
-          <h2>Goal Sliders</h2>
+          <Divider className="step-3-divider">
+            Step 3 of 3
+          </Divider>
+
+          <h3 className="section-header section-header-3">
+            {"Where do you want to be?"}
+          </h3>
+      
+          <p className="body section-three-text"> 
+            It is a long established fact that a reader will be distracted by the 
+            readable content of a page when looking at its layout.
+          </p>
+
           <Sliders
             onSliderUpdate={this.props.onSliderUpdate}
             sliders={this.props.goalSliders}
             group={"goalSliders"}
             />
-          <button onClick={this.submitForm.bind(this)}>futton </button>
+          <button 
+            className="form-submit-button"  
+            onClick={this.submitForm.bind(this)}
+          >
+            GENERATE MYPCO LITE SCORE 
+          </button>
         </form>
       </Page>
     )
@@ -102,7 +134,11 @@ class Form extends React.Component {
 }
 
 Form.propTypes = {
-
+  currentSliders: PropTypes.instanceOf(Immutable.Map).isRequired,
+  goalSliders: PropTypes.instanceOf(Immutable.Map).isRequired,
+  fields: PropTypes.instanceOf(Immutable.Map).isRequired,
+  onSliderUpdate: PropTypes.func.isRequired,
+  onFieldUpdate: PropTypes.func.isRequired
 }
 
 export default Form;

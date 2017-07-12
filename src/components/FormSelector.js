@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import '../style/selector.scss';
-
 class FormSelector extends React.Component {
   
   onSelection(event){

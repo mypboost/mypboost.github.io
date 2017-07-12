@@ -6,7 +6,7 @@ import '../style/divider.scss';
 class Divider extends React.Component {
   render() {
     return (
-      <div className="divider">
+      <div className={"divider " + this.props.className}>
         <div className="divider-line" />
         <p className="divider-middle">
           {this.props.children}
@@ -18,7 +18,8 @@ class Divider extends React.Component {
 }
 
 Divider.propTypes = {
-  text: PropTypes.string
+  text: PropTypes.string,
+  className: PropTypes.string
 }
 
 export default Divider;

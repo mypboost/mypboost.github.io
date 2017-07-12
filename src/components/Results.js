@@ -30,6 +30,13 @@ class Results extends React.Component {
     const { name, age, sex, email } = this.props.fields.toJS()
     return (
       <Page>
+        <h2 className="large-header">Your MYPCO Lite Score</h2> 
+        <p className="body form-intro-text"> 
+          It is a long established fact that a reader will be distracted by the 
+          readable content of a page when looking at its layout. The point of 
+          using Lorem Ipsum is that it has a more-or-less normal distribution 
+        </p>
+
         <p>name: {name.value}</p>
         <p>age: {age.value}</p>
         <p>sex: {sex.value}</p>

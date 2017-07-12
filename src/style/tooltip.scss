@@ -1,8 +1,12 @@
+@import "./_colours";
+
 .tooltip {
   display: inline-block;
 
   .tooltip-icon {
-    color: white;
+    color: $grey;
+    font-size: 13px;
+    cursor: pointer;
   }
 }
 

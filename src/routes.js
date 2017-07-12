@@ -8,10 +8,7 @@ const Router = () => (
   <BrowserRouter>
     <div className="main">
       <div className="site-header">
-        <div className="site-header-inner">
-          <div className="placeholder-logo" />
-          <h1 className="site-header-text">MAXIMISE <br /> YOUR POTENTIAL</h1>
-        </div>
+        <img src="assets/logo/myp-logo.png" />
       </div>
       <Route exact path="/" component={Form}/>
       <Route exact path="/results.html" component={Results}/>

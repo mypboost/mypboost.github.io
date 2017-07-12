@@ -19,12 +19,12 @@ class FormElement extends React.Component {
   }
 
   render() {
-    const { fieldTitle, info, id, className } = this.props
+    const { fieldTitle, info, id, className, fieldName } = this.props
     return (
       <div className={"form-element " + className}>
         <div className="info">
           <p className="field-title">{fieldTitle}</p>
-          <Tooltip text={info} id={id} />
+          <Tooltip text={info} id={"form-element-" + fieldName} />
         </div>
           {this.childrenWithProps()}
       </div>
@@ -33,7 +33,7 @@ class FormElement extends React.Component {
 }
 
 FormElement.propTypes = {
-  fieldName: PropTypes.string,
+  fieldName: PropTypes.string.isRequired,
   info: PropTypes.string,
   fieldTitle: PropTypes.string,
   placeholder: PropTypes.string,
