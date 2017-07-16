@@ -1,14 +1,15 @@
 var webpack = require('webpack');
 var path = require('path');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var BUILD_DIR = path.resolve(__dirname, 'build');
-var APP_DIR = path.resolve(__dirname, 'src');
+var SRC_DIR = path.resolve(__dirname, 'src');
 
 
 namespace = 'test'
 
 var config = {
-  entry: APP_DIR + '/index.js',
+  entry: SRC_DIR + '/index.js',
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js'
@@ -30,11 +31,20 @@ var config = {
       },
       {
         test : /\.js?/,
-        include : APP_DIR,
+        include : SRC_DIR,
         loader : 'babel-loader'
       }
     ]
-  }
+  },
+  plugins: [
+        new CopyWebpackPlugin([
+          {
+            context: SRC_DIR + '/static',
+            from: '**/*',
+            to: BUILD_DIR
+          }
+        ])
+  ]
 };
 
 module.exports = config;

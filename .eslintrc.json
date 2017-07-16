@@ -1,0 +1,17 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "semi": ["error", "always"],
+        "max-len": ["error", 80]
+    },
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "plugins": [
+      "react"
+    ]
+}
