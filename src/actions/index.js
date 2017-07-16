@@ -1,5 +1,7 @@
+import * as Actions from "./actions.js";
+
 export const updateSlider = (group, name, value) => ({
-  type: 'UPDATE_SLIDER',
+  type: Actions.UPDATE_SLIDER,
   group,
   name,
   value
@@ -7,7 +9,7 @@ export const updateSlider = (group, name, value) => ({
 
 
 export const updateField = ( name, value) => ({
-  type: 'UPDATE_FIELD',
+  type: Actions.UPDATE_FIELD,
   name,
   value
 })

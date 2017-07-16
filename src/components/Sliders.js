@@ -46,4 +46,11 @@ class Sliders extends React.Component {
   }
 }
 
+Sliders.propTypes = {
+  onSliderUpdate: PropTypes.func.isRequired,
+  sliders: PropTypes.instanceOf(Immutable.Map).isRequired,
+  group: PropTypes.string.isRequired
+}
+
+
 export default Sliders;

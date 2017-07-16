@@ -26,7 +26,7 @@ class Slider extends React.Component {
           max={maxValue}
           defaultValue={value}
           onChange={this.setValue.bind(this)}
-          className={"slider " + className}
+          className={"slider " + className + "-slider"}
           step={10}
         />
       </div>

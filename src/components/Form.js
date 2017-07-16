@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Immutable from 'immutable';
 
-import Page from './page'
+import Page from './Page'
 import Sliders from './Sliders';
 import FormElement from './FormElement';
 import FormInput from './FormInput';

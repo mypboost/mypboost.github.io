@@ -1,33 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Page from './page'
+import Immutable from 'immutable';
+
+import Page from './Page'
+import ResultsTable from './ResultsTable'
 
 class Results extends React.Component {
 
-  createRow(currentValue, goalValue, name) {
-
-    return (
-      <p key={name}>
-       {name}<br />
-       current: {currentValue.get("value")}<br />
-       goal: {goalValue.get("value")}<br />
-      </p>
-    )
-  }
-
-  rows(currentSliders, goalSliders){
-    let rows = []
-
-    currentSliders.forEach((currentValue, key) => {
-      const goalValue = goalSliders.get(key)
-      rows.push(this.createRow(currentValue, goalValue, key));
-    })
-
-    return rows;
-  }
-
   render(){
-    const { name, age, sex, email } = this.props.fields.toJS()
+    const { currentSliders, goalSliders } = this.props;
     return (
       <Page>
         <h2 className="large-header">Your MYPCO Lite Score</h2> 
@@ -36,16 +17,21 @@ class Results extends React.Component {
           readable content of a page when looking at its layout. The point of 
           using Lorem Ipsum is that it has a more-or-less normal distribution 
         </p>
+        
+        <ResultsTable 
+          currentSliders={currentSliders}
+          goalSliders={goalSliders}
+        />
 
-        <p>name: {name.value}</p>
-        <p>age: {age.value}</p>
-        <p>sex: {sex.value}</p>
-        <p>email: {email.value}</p>
-        {this.rows(this.props.currentSliders, this.props.goalSliders)}
       </Page>
     )
   }
+}
 
+Results.propTypes = {
+  currentSliders: PropTypes.instanceOf(Immutable.Map).isRequired,
+  goalSliders: PropTypes.instanceOf(Immutable.Map).isRequired,
+  fields: PropTypes.instanceOf(Immutable.Map).isRequired,
 }
 
 export default Results
