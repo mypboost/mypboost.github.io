@@ -1,4 +1,4 @@
-#Setup
+# Setup
 
 Clone you repo to you machine, navigate to the directory and install the necessary files using npm:
 
