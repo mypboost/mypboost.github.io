@@ -14,11 +14,11 @@ class ResultsTable extends React.Component {
        <p className="column column2">{column2}</p>
        <p className="column column3">{column3}</p>
       </div>
-    )
+    );
   }
 
   rows(currentSliders, goalSliders){
-    let rows = []
+    let rows = [];
 
     currentSliders.forEach((currentParameters, sliderName) => {
       const goalValue = goalSliders.getIn([sliderName, "value"]);
@@ -26,7 +26,7 @@ class ResultsTable extends React.Component {
       const className = currentParameters.get("className");
       const gdd = "1000";
       rows.push(this.createRow(className, sliderName, gdd, currentValue, goalValue));
-    })
+    });
 
     return rows;
   }
@@ -37,13 +37,13 @@ class ResultsTable extends React.Component {
         {this.createRow("title", "MYP BIG6 Life Dimensions", "GDD", "Current", "Goal" )}
         {this.rows(this.props.currentSliders, this.props.goalSliders)}
       </div>
-    )
+    );
   }
 }
 
 ResultsTable.propTypes = {
   currentSliders: PropTypes.instanceOf(Immutable.Map).isRequired,
   goalSliders: PropTypes.instanceOf(Immutable.Map).isRequired
-}
+};
 
-export default ResultsTable
+export default ResultsTable;

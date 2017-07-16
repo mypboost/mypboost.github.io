@@ -13,13 +13,14 @@ class Divider extends React.Component {
         </p>
         <div className="divider-line" />
       </div>
-    )
+    );
   }
 }
 
 Divider.propTypes = {
   text: PropTypes.string,
-  className: PropTypes.string
-}
+  className: PropTypes.string,
+  children: PropTypes.string.isRequired
+};
 
 export default Divider;

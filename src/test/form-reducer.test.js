@@ -2,7 +2,7 @@ import formReducer from '../reducers/form'
 import { defaultForm } from '../reducers/default_state';
 import * as Actions from '../actions/actions'
 
-describe('form reducer', () => {
+describe('updating fields', () => {
   it('should return the default state', () => {
     expect(formReducer(defaultForm, {})).toEqual(defaultForm)
   })

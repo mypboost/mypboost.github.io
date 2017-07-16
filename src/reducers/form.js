@@ -7,15 +7,15 @@ const form = (state, action) => {
     default:
       return state;
   }
-}
+};
 
 const updateSlider = (state, group, name, value) => {
   return state.setIn([group, name, "value"], value);
-}
+};
 
 const updateField  = (state, name, value) => {
   return state.setIn(["fields", name, "value"], value);
-}
+};
 
 
 export default form;

@@ -22,15 +22,15 @@ class Sliders extends React.Component {
         onSliderChange={this.props.onSliderUpdate}
         group={this.props.group}
       />
-    )
+    );
   }
 
   rows(sliders){
-    let rows = Immutable.List([])
+    let rows = Immutable.List([]);
 
     sliders.forEach((value, key) => {
       rows = rows.push(this.createRow(value, key));
-    })
+    });
 
     return rows;
   }
@@ -42,7 +42,7 @@ class Sliders extends React.Component {
       <div className="sliders">
         {this.rows(this.props.sliders)}
       </div>
-    )
+    );
   }
 }
 
@@ -50,7 +50,7 @@ Sliders.propTypes = {
   onSliderUpdate: PropTypes.func.isRequired,
   sliders: PropTypes.instanceOf(Immutable.Map).isRequired,
   group: PropTypes.string.isRequired
-}
+};
 
 
 export default Sliders;

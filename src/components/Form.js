@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Immutable from 'immutable';
 
-import Page from './Page'
+import Page from './Page';
 import Sliders from './Sliders';
 import FormElement from './FormElement';
 import FormInput from './FormInput';
@@ -12,19 +12,19 @@ import Divider from './Divider';
 class Form extends React.Component {
 
   submitForm(event){
-    event.preventDefault()
-    this.props.history.push('/results.html')
+    event.preventDefault();
+    this.props.history.push('/results.html');
   }
 
   render() {
-    const { name, age, sex, email } = this.props.fields.toJS()
+    const { name, age, sex, email } = this.props.fields.toJS();
     return (
       <Page>
-        <h2 className="large-header">MYPCO Lite Score Generator</h2> 
-        <p className="body form-intro-text"> 
-          It is a long established fact that a reader will be distracted by the 
-          readable content of a page when looking at its layout. The point of 
-          using Lorem Ipsum is that it has a more-or-less normal distribution 
+        <h2 className="large-header">MYPCO Lite Score Generator</h2>
+        <p className="body form-intro-text">
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum is that it has a more-or-less normal distribution
         </p>
 
         <Divider className="step-1-divider">
@@ -71,7 +71,7 @@ class Form extends React.Component {
             >
               <FormSelection options={["Male", "Female"]} />
             </FormElement>
-          
+
             <FormElement
               fieldTitle="Your Email Address"
               currentValue={email.value}
@@ -91,10 +91,10 @@ class Form extends React.Component {
           <h3 className="section-header section-header-2">
             {"Where are you at right now?"}
           </h3>
-      
-          <p className="body section-two-text"> 
-            It is a long established fact that a reader will be distracted by the 
-            readable content of a page when looking at its layout.
+
+          <p className="body section-two-text">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout.
           </p>
 
           <Sliders
@@ -110,10 +110,10 @@ class Form extends React.Component {
           <h3 className="section-header section-header-3">
             {"Where do you want to be?"}
           </h3>
-      
-          <p className="body section-three-text"> 
-            It is a long established fact that a reader will be distracted by the 
-            readable content of a page when looking at its layout.
+
+          <p className="body section-three-text">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout.
           </p>
 
           <Sliders
@@ -121,15 +121,15 @@ class Form extends React.Component {
             sliders={this.props.goalSliders}
             group={"goalSliders"}
             />
-          <button 
-            className="form-submit-button"  
+          <button
+            className="form-submit-button"
             onClick={this.submitForm.bind(this)}
           >
-            GENERATE MYPCO LITE SCORE 
+            GENERATE MYPCO LITE SCORE
           </button>
         </form>
       </Page>
-    )
+    );
   }
 }
 
@@ -138,7 +138,8 @@ Form.propTypes = {
   goalSliders: PropTypes.instanceOf(Immutable.Map).isRequired,
   fields: PropTypes.instanceOf(Immutable.Map).isRequired,
   onSliderUpdate: PropTypes.func.isRequired,
-  onFieldUpdate: PropTypes.func.isRequired
-}
+  onFieldUpdate: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired
+};
 
 export default Form;

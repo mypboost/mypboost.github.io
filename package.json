@@ -9,6 +9,7 @@
     "watch": "./node_modules/.bin/webpack -w",
     "build": "./node_modules/.bin/webpack -d",
     "lint": "./node_modules/.bin/eslint src",
+    "sass-lint": "./node_modules/.bin/sass-lint src",
     "server": "./node_modules/.bin/http-server ./build -p 7676",
     "dev": "concurrently --kill-others 'npm run watch' 'npm run server'"
   },

@@ -5,11 +5,16 @@ export const updateSlider = (group, name, value) => ({
   group,
   name,
   value
-})
-
+});
 
 export const updateField = ( name, value) => ({
   type: Actions.UPDATE_FIELD,
   name,
   value
-})
+});
+
+export const blurField = ( name, value) => ({
+  type: Actions.BLUR_FIELD,
+  name,
+  value
+});

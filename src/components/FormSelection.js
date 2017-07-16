@@ -16,9 +16,9 @@ class FormSelection extends React.Component {
         fieldName={fieldName}
         option={option}
       />
-    )
+    );
   }
-  
+
   getSelectors(){
     let selectors = [];
     for (let option of this.props.options){
@@ -33,7 +33,7 @@ class FormSelection extends React.Component {
       <div className="form-selection">
         {this.getSelectors()}
       </div>
-    )
+    );
   }
 }
 
@@ -44,6 +44,6 @@ FormSelection.propTypes = {
   currentValue: PropTypes.string,
   onFieldUpdate: PropTypes.func,
   options: PropTypes.array
-}
+};
 
 export default FormSelection;

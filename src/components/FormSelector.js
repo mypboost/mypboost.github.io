@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class FormSelector extends React.Component {
-  
-  onSelection(event){
-    const { fieldName, option } = this.props 
-    this.props.onFieldUpdate(fieldName, option)
+
+  onSelection(){
+    const { fieldName, option } = this.props;
+    this.props.onFieldUpdate(fieldName, option);
   }
 
   render(){
-    const { currentValue, option } = this.props
-    const selectedClass = currentValue === option ? "form-selector-selected" : ""
+    const { currentValue, option } = this.props;
+    const selectedClass = currentValue === option ? "form-selector-selected" : "";
     return(
       <a
         className = {"form-selector " + selectedClass}
@@ -18,7 +18,7 @@ class FormSelector extends React.Component {
       >
         {option}
       </a>
-    )
+    );
   }
 }
 
@@ -28,7 +28,8 @@ FormSelector.propTypes = {
   fieldTitle: PropTypes.string,
   placeholder: PropTypes.string,
   currentValue: PropTypes.string,
-  onFieldUpdate: PropTypes.func
-}
+  onFieldUpdate: PropTypes.func,
+  option: PropTypes.string
+};
 
 export default FormSelector;

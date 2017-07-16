@@ -1,8 +1,8 @@
-import React from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 
-import Form from './containers/Form'
-import Results from './containers/Results'
+import Form from './containers/Form';
+import Results from './containers/Results';
 
 const Router = () => (
   <BrowserRouter>
@@ -16,5 +16,6 @@ const Router = () => (
       <Route exact path="/mypco/build/results.html" component={Results}/>
     </div>
   </BrowserRouter>
-)
+);
+
 export default Router;

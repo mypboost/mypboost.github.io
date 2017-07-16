@@ -1,21 +1,21 @@
-import { connect } from 'react-redux'
-import { updateSlider, updateField } from '../actions'
-import FormComponent from '../components/Form'
+import { connect } from 'react-redux';
+import { updateSlider, updateField } from '../actions';
+import FormComponent from '../components/Form';
 
 const mapStateToProps = (state) => ({
   currentSliders: state.getIn(["form", "currentSliders"]),
   goalSliders: state.getIn(["form", "goalSliders"]),
   fields: state.getIn(["form", "fields"])
-})
+});
 
 const mapDispatchToProps = {
   onSliderUpdate: updateSlider,
   onFieldUpdate: updateField,
-}
+};
 
 const Form = connect(
   mapStateToProps,
   mapDispatchToProps
-)(FormComponent)
+)(FormComponent);
 
 export default Form;

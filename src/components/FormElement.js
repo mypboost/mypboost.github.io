@@ -7,19 +7,26 @@ import '../style/form-element.scss';
 class FormElement extends React.Component {
 
   childrenWithProps(){
-    const { children, onFieldUpdate, placeholder, currentValue, fieldName } = this.props
+    const {
+      children,
+      onFieldUpdate,
+      placeholder,
+      currentValue,
+      fieldName
+    } = this.props;
+
     return React.Children.map(children,
      (child) => React.cloneElement(child, {
         onFieldUpdate,
         placeholder,
         currentValue,
-        fieldName 
+        fieldName
      })
     );
   }
 
   render() {
-    const { fieldTitle, info, id, className, fieldName } = this.props
+    const { fieldTitle, info, className, fieldName } = this.props;
     return (
       <div className={"form-element " + className}>
         <div className="info">
@@ -28,7 +35,7 @@ class FormElement extends React.Component {
         </div>
           {this.childrenWithProps()}
       </div>
-    )
+    );
   }
 }
 
@@ -39,7 +46,8 @@ FormElement.propTypes = {
   placeholder: PropTypes.string,
   currentValue: PropTypes.string,
   onFieldUpdate: PropTypes.func,
-  className: PropTypes.string
-}
+  className: PropTypes.string,
+  children: PropTypes.element.isRequired
+};
 
 export default FormElement;

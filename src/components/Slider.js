@@ -30,7 +30,7 @@ class Slider extends React.Component {
           step={10}
         />
       </div>
-    )
+    );
   }
 }
 
@@ -42,6 +42,6 @@ Slider.propTypes = {
   name: PropTypes.string.isRequired,
   group: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
-}
+};
 
 export default Slider;
