@@ -13,7 +13,15 @@ class Form extends React.Component {
 
   submitForm(event){
     event.preventDefault();
-    this.props.history.push('/results.html');
+    this.props.onFormSubmit();
+  }
+
+  submitIfValid(){
+    if (this.props.canSubmit) { this.props.history.push('/results.html') }
+  }
+
+  componentDidUpdate(){
+    this.submitIfValid();
   }
 
   render() {
@@ -40,9 +48,11 @@ class Form extends React.Component {
             <FormElement
               fieldTitle="Your Full Name"
               currentValue={name.value}
+              errors={name.errors}
               placeholder="Your Name"
               fieldName="name"
               onFieldUpdate={this.props.onFieldUpdate}
+              onFieldBlur={this.props.onFieldBlur}
               className="name-input"
             >
               <FormInput />
@@ -52,9 +62,11 @@ class Form extends React.Component {
               fieldTitle="Your Age"
               info="Your age tooltip"
               currentValue={age.value}
+              errors={age.errors}
               placeholder="Your Age"
               fieldName="age"
               onFieldUpdate={this.props.onFieldUpdate}
+              onFieldBlur={this.props.onFieldBlur}
               className="age-input"
             >
               <FormInput />
@@ -66,6 +78,7 @@ class Form extends React.Component {
               fieldName="sex"
               onFieldUpdate={this.props.onFieldUpdate}
               currentValue={sex.value}
+              errors={sex.errors}
               component={<FormInput />}
               className="sex-input"
             >
@@ -75,9 +88,11 @@ class Form extends React.Component {
             <FormElement
               fieldTitle="Your Email Address"
               currentValue={email.value}
+              errors={email.errors}
               placeholder="you@email.com"
               fieldName="email"
               onFieldUpdate={this.props.onFieldUpdate}
+              onFieldBlur={this.props.onFieldBlur}
               className="email-input"
             >
               <FormInput />
@@ -139,7 +154,10 @@ Form.propTypes = {
   fields: PropTypes.instanceOf(Immutable.Map).isRequired,
   onSliderUpdate: PropTypes.func.isRequired,
   onFieldUpdate: PropTypes.func.isRequired,
-  history: PropTypes.object.isRequired
+  onFieldBlur: PropTypes.func.isRequired,
+  onFormSubmit: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
+  canSubmit: PropTypes.bool.isRequired
 };
 
 export default Form;

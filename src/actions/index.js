@@ -18,3 +18,7 @@ export const blurField = ( name, value) => ({
   name,
   value
 });
+
+export const submitForm = () => ({
+  type: Actions.SUBMIT_FORM
+});

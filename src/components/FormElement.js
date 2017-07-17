@@ -10,6 +10,7 @@ class FormElement extends React.Component {
     const {
       children,
       onFieldUpdate,
+      onFieldBlur,
       placeholder,
       currentValue,
       fieldName
@@ -17,12 +18,29 @@ class FormElement extends React.Component {
 
     return React.Children.map(children,
      (child) => React.cloneElement(child, {
-        onFieldUpdate,
-        placeholder,
-        currentValue,
-        fieldName
+       onFieldUpdate,
+       onFieldBlur,
+       placeholder,
+       currentValue,
+       fieldName
      })
     );
+  }
+
+  createError(error) {
+    return(
+      <p key={error}>
+        {error}
+      </p>
+    );
+  }
+
+  errors(){
+    let errors = [];
+    this.props.errors.forEach((error) => {
+      errors.push(this.createError(error))
+    })
+    return errors;
   }
 
   render() {
@@ -33,7 +51,12 @@ class FormElement extends React.Component {
           <p className="field-title">{fieldTitle}</p>
           <Tooltip text={info} id={"form-element-" + fieldName} />
         </div>
-          {this.childrenWithProps()}
+
+        {this.childrenWithProps()}
+
+        <div className="errors">
+          {this.errors()}
+        </div>
       </div>
     );
   }
@@ -45,7 +68,9 @@ FormElement.propTypes = {
   fieldTitle: PropTypes.string,
   placeholder: PropTypes.string,
   currentValue: PropTypes.string,
+  errors: PropTypes.array,
   onFieldUpdate: PropTypes.func,
+  onFieldBlur: PropTypes.func,
   className: PropTypes.string,
   children: PropTypes.element.isRequired
 };

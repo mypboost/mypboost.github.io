@@ -1,15 +1,18 @@
 import formReducer from '../reducers/form'
-import { defaultForm } from '../reducers/default_state';
+import { defaultForm } from '../reducers/default-state';
 import * as Actions from '../actions/actions'
+
+const formAction = (action, formState = defaultForm) => {
+  return formReducer(formState, action);
+}
 
 describe('updating fields', () => {
   it('should return the default state', () => {
-    expect(formReducer(defaultForm, {})).toEqual(defaultForm)
+    expect(formAction({})).toEqual(defaultForm)
   })
 
   it('should update the correct slider', () => {
-    const newState = formReducer(
-      defaultForm, 
+    const state = formAction(
       {
         type: Actions.UPDATE_SLIDER,
         group: "goalSliders",
@@ -17,13 +20,13 @@ describe('updating fields', () => {
         value: 100
       }
     )
-    const sliderShouldUpdate = newState.getIn(
+    const sliderShouldUpdate = state.getIn(
       ["goalSliders", "Physical Health & Fitness", "value"]
     )
-    const sameGroupShouldNotUpdate = newState.getIn(
+    const sameGroupShouldNotUpdate = state.getIn(
       ["goalSliders", "Mental Health & Wellbeing", "value"]
     )
-    const differentGroupShouldNotUpdate = newState.getIn(
+    const differentGroupShouldNotUpdate = state.getIn(
       ["currentSliders", "Physical Health & Fitness", "value"]
     )
     expect(sliderShouldUpdate).toEqual(100)
@@ -32,21 +35,104 @@ describe('updating fields', () => {
   })
 
   it('should update the correct field', () => {
-    const newState = formReducer(
-      defaultForm, 
+    const state = formAction(
       {
         type: Actions.UPDATE_FIELD,
         name: "name",
         value: "Cool Name"
       }
     )
-    const fieldShouldUpdate = newState.getIn(
+    const fieldShouldUpdate = state.getIn(
       ["fields", "name", "value"]
     )
-    const fieldShouldNotUpdate = newState.getIn(
+    const fieldShouldNotUpdate = state.getIn(
       ["fields", "age", "value"]
     )
     expect(fieldShouldUpdate).toEqual("Cool Name")
     expect(fieldShouldNotUpdate).toEqual("")
   })
+
+  it('should display errors if relevant on blur', () => {
+    const state = formAction(
+      {
+        type: Actions.BLUR_FIELD,
+        name: "name",
+        value: ""
+      }
+    )
+
+    const fieldShouldHaveErrors = state.getIn(
+      ["fields", "name", "errors"]
+    )
+
+    expect(fieldShouldHaveErrors.size).toEqual(1)
+
+  });
+
+  it('should not display errors on field update', () => {
+    const state = formAction(
+      {
+        type: Actions.UPDATE_FIELD,
+        name: "name",
+        value: ""
+      }
+    )
+
+    const fieldShouldNotHaveErrors = state.getIn(
+      ["fields", "name", "errors"]
+    )
+
+    expect(fieldShouldNotHaveErrors.size).toEqual(0)
+
+  });
+
+  it('should not remove errors on update if they are not fixed', () => {
+    let state = formAction(
+      {
+        type: Actions.BLUR_FIELD,
+        name: "name",
+        value: ""
+      }
+    )
+
+    state = formAction(
+      {
+        type: Actions.UPDATE_FIELD,
+        name: "name",
+        value: ""
+      },
+      state
+    )
+
+    const fieldShouldHaveErrors = state.getIn(
+      ["fields", "name", "errors"]
+    )
+
+    expect(fieldShouldHaveErrors.size).toEqual(1)
+  });
+
+  it('should remove errors on update if they are fixed', () => {
+    let state = formAction(
+      {
+        type: Actions.BLUR_FIELD,
+        name: "name",
+        value: ""
+      }
+    )
+
+    state = formAction(
+      {
+        type: Actions.UPDATE_FIELD,
+        name: "name",
+        value: "some text"
+      },
+      state
+    )
+
+    const fieldShouldHaveErrors = state.getIn(
+      ["fields", "name", "errors"]
+    )
+
+    expect(fieldShouldHaveErrors.size).toEqual(0)
+  });
 })

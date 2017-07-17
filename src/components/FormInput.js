@@ -7,12 +7,18 @@ class FormInput extends React.Component {
     this.props.onFieldUpdate(name, value);
   }
 
+  onFieldBlur(event){
+    const { value, name } = event.target;
+    this.props.onFieldBlur(name, value);
+  }
+
   render() {
     const { fieldName, currentValue, placeholder } = this.props;
     return (
       <input
         placeholder={placeholder}
         onChange={this.onFieldUpdate.bind(this)}
+        onBlur={this.onFieldBlur.bind(this)}
         value={currentValue}
         name={fieldName}
       />
@@ -25,6 +31,7 @@ FormInput.propTypes = {
   placeholder: PropTypes.string,
   value: PropTypes.string,
   onFieldUpdate: PropTypes.func,
+  onFieldBlur: PropTypes.func,
   currentValue: PropTypes.string
 };
 
