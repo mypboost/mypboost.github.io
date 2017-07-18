@@ -23,15 +23,14 @@ const updateField  = (state, name, value) => {
   let newState = state;
 
   if (!state.getIn(["fields", name, "errors"]).isEmpty()) {
-    newState = validateFields(state, name, value)
+    newState = validateFields(state, name, value);
   }
 
   return newState.setIn(["fields", name, "value"], value);
 };
 
 const blurField = (state, name, value) => {
-  const fieldState = state.getIn(["fields", name, "value"]);
-  return validateFields(state, name, fieldState);
+  return validateFields(state, name, value);
 };
 
 const submitForm = (state) => {
@@ -48,6 +47,7 @@ const submitForm = (state) => {
 
   return newState.set("canSubmit", !areErrors);
 };
+
 
 const validateFields = (state, name, fieldState) =>{
 

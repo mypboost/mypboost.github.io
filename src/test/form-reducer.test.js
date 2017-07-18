@@ -1,6 +1,7 @@
-import formReducer from '../reducers/form'
+import formReducer from '../reducers/form';
+import Immutable from 'immutable';
 import { defaultForm } from '../reducers/default-state';
-import * as Actions from '../actions/actions'
+import * as Actions from '../actions/actions';
 
 const formAction = (action, formState = defaultForm) => {
   return formReducer(formState, action);
@@ -112,6 +113,7 @@ describe('updating fields', () => {
   });
 
   it('should remove errors on update if they are fixed', () => {
+    const postFormMock = jest.fn();
     let state = formAction(
       {
         type: Actions.BLUR_FIELD,
@@ -134,5 +136,30 @@ describe('updating fields', () => {
     )
 
     expect(fieldShouldHaveErrors.size).toEqual(0)
+  });
+
+  it('should fail form submission if there are errors', () => {
+    let state = formAction({type: Actions.SUBMIT_FORM})
+    const canSubmit = state.get("canSubmit");
+    expect(canSubmit).toEqual(false)
+  });
+
+  it('should allow form submission if there are no errors', () => {
+    let state = formAction(
+      {type: Actions.SUBMIT_FORM},
+      Immutable.fromJS(
+        {
+          "fields": {
+            "name": {"value": "foo"},
+            "age": {"value": "foo"},
+            "sex": {"value": "foo"},
+            "email": {"value": "foo"}
+          }
+        }
+      )
+    )
+
+    const canSubmit = state.get("canSubmit");
+    expect(canSubmit).toEqual(true)
   });
 })

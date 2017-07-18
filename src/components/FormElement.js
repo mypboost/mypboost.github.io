@@ -38,8 +38,8 @@ class FormElement extends React.Component {
   errors(){
     let errors = [];
     this.props.errors.forEach((error) => {
-      errors.push(this.createError(error))
-    })
+      errors.push(this.createError(error));
+    });
     return errors;
   }
 

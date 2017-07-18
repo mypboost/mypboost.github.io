@@ -8,6 +8,7 @@ import FormElement from './FormElement';
 import FormInput from './FormInput';
 import FormSelection from './FormSelection';
 import Divider from './Divider';
+import { postForm } from '../utils/post-form';
 
 class Form extends React.Component {
 
@@ -17,7 +18,15 @@ class Form extends React.Component {
   }
 
   submitIfValid(){
-    if (this.props.canSubmit) { this.props.history.push('/results.html') }
+    const { canSubmit, fields, currentSliders, goalSliders } = this.props;
+    if (canSubmit) {
+      this.props.history.push('/results.html');
+      postForm(fields, currentSliders, goalSliders);
+    }
+    else {
+      document.getElementById("form-errors-anchor").scrollIntoView(true);
+      window.scrollBy(0, -20);
+    }
   }
 
   componentDidUpdate(){
@@ -39,7 +48,7 @@ class Form extends React.Component {
           Step 1 of 3
         </Divider>
 
-        <h3 className="section-header section-header-1">
+        <h3 id="form-errors-anchor" className="section-header section-header-1">
           Tell us a little about yourself...
         </h3>
 
