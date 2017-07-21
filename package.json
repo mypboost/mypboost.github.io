@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "gh-pages": "bash bin/gh-pages.sh",
+    "deploy": "bash bin/deploy.sh",
     "test": "jest src",
     "test:watch": "npm test src -- --watch",
     "watch": "./node_modules/.bin/webpack -w",
