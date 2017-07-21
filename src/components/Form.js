@@ -11,6 +11,8 @@ import Divider from './Divider';
 import { postForm } from '../utils/post-form';
 import { scrollTo } from '../utils/scroll-to';
 
+import '../style/form.scss';
+
 class Form extends React.Component {
 
   submitForm(event){

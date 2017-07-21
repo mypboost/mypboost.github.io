@@ -6,11 +6,18 @@ body {
 }
 
 h1, h2, h3, h4, h5, p, a, button, li, ul, span {
-  font-family: "adelle-sans",sans-serif;font-family: "adelle-sans",sans-serif;
+  font-family: "adelle-sans", sans-serif;
   color: white;
 }
 
 .site-header {
   margin: 25px 0 35px;
   text-align: center;
+}
+
+
+.small-header {
+  text-align: center;
+  font-weight: 500;
+  font-size: 19px;
 }
