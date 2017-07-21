@@ -10,6 +10,14 @@ Run the development server and builder using:
 
 You should now be able to navigate to "localhost:7676" and see the app running. Any changes you make should trigger a rebuild automatically.
 
+
+# Deployment
+
+To deploy the website to the github pages repo:
+
+`npm run deploy`
+
+
 # Tests and Linting
 
 Run tests with:
