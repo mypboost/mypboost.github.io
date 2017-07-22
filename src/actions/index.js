@@ -22,3 +22,8 @@ export const blurField = ( name, value) => ({
 export const submitForm = () => ({
   type: Actions.SUBMIT_FORM
 });
+
+export const setScrollToErrors = (value) => ({
+  type: Actions.SET_SCROLL_TO_ERRORS,
+  value
+});

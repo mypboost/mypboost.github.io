@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "deploy": "bash bin/deploy.sh",
-    "test": "jest src && npm run lint",
-    "test:watch": "npm test src -- --watch",
+    "test": "jest src",
+    "test:watch": "npm test -- --watch",
     "watch": "./node_modules/.bin/webpack -w",
     "build": "./node_modules/.bin/webpack -d",
     "lint": "./node_modules/.bin/eslint src",
