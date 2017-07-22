@@ -1,14 +1,17 @@
 import Immutable from 'immutable';
+import * as Actions from "../actions/actions.js";
 
 const form = (state, action) => {
   switch (action.type) {
-    case 'UPDATE_SLIDER':
+    case Actions.UPDATE_SLIDER:
       return updateSlider(state, action.group, action.name, action.value);
-    case 'UPDATE_FIELD':
+    case Actions.UPDATE_FIELD:
       return updateField(state, action.name, action.value);
-    case 'BLUR_FIELD':
+    case Actions.BLUR_FIELD:
       return blurField(state, action.name, action.value);
-    case 'SUBMIT_FORM':
+    case Actions.SET_SCROLL_TO_ERRORS:
+      return state.set('scrollToErrors', action.value);
+    case Actions.SUBMIT_FORM:
       return submitForm(state);
     default:
       return state;
@@ -42,6 +45,7 @@ const submitForm = (state) => {
 
     if (!newState.getIn(["fields", key, "errors"]).isEmpty()) {
       areErrors = true;
+      newState = newState.set('scrollToErrors', true);
     }
   });
 

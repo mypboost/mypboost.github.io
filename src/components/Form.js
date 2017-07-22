@@ -9,6 +9,7 @@ import FormInput from './FormInput';
 import FormSelection from './FormSelection';
 import Divider from './Divider';
 import { postForm } from '../utils/post-form';
+import { scrollTo } from '../utils/scroll-to';
 
 class Form extends React.Component {
 
@@ -18,14 +19,22 @@ class Form extends React.Component {
   }
 
   submitIfValid(){
-    const { canSubmit, fields, currentSliders, goalSliders } = this.props;
+    const {
+      canSubmit,
+      fields,
+      currentSliders,
+      goalSliders,
+      scrollToErrors,
+      setScrollToErrors
+    } = this.props;
+
     if (canSubmit) {
       this.props.history.push('/results.html');
       postForm(fields, currentSliders, goalSliders);
     }
-    else {
-      document.getElementById("form-errors-anchor").scrollIntoView(true);
-      window.scrollBy(0, -20);
+    else if(scrollToErrors === true) {
+      scrollTo('form-errors-anchor', 20);
+      setScrollToErrors(false);
     }
   }
 
@@ -166,7 +175,9 @@ Form.propTypes = {
   onFieldBlur: PropTypes.func.isRequired,
   onFormSubmit: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired,
-  canSubmit: PropTypes.bool.isRequired
+  canSubmit: PropTypes.bool.isRequired,
+  scrollToErrors: PropTypes.bool.isRequired,
+  setScrollToErrors: PropTypes.func.isRequired
 };
 
 export default Form;

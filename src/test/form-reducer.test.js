@@ -139,13 +139,12 @@ describe('updating fields', () => {
   });
 
   it('should fail form submission if there are errors', () => {
-    let state = formAction({type: Actions.SUBMIT_FORM})
-    const canSubmit = state.get("canSubmit");
-    expect(canSubmit).toEqual(false)
+    const state = formAction({type: Actions.SUBMIT_FORM})
+    expect(state.get("canSubmit")).toEqual(false)
   });
 
   it('should allow form submission if there are no errors', () => {
-    let state = formAction(
+    const state = formAction(
       {type: Actions.SUBMIT_FORM},
       Immutable.fromJS(
         {
@@ -159,7 +158,14 @@ describe('updating fields', () => {
       )
     )
 
-    const canSubmit = state.get("canSubmit");
-    expect(canSubmit).toEqual(true)
+    expect(state.get("canSubmit")).toEqual(true)
+  });
+
+  it('setScrollToErrors should change to the provided boolean', () => {
+    const state = formAction(
+      { type: Actions.SET_SCROLL_TO_ERRORS, value: true }, 
+      Immutable.fromJS({ scrollToErrors: false })
+    )
+    expect(state.get('scrollToErrors')).toEqual(true)
   });
 })
