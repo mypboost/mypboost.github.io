@@ -46,10 +46,13 @@ class FormElement extends React.Component {
   render() {
     const { fieldTitle, info, className, fieldName } = this.props;
     return (
-      <div className={"form-element " + className}>
+      <div className={ "form-element " + className }>
         <div className="info">
-          <p className="field-title">{fieldTitle}</p>
-          <Tooltip text={info} id={"form-element-" + fieldName} />
+          <p className="field-title">{ fieldTitle }</p>
+          <Tooltip
+            text={info}
+            id={ "form-element-tooltip-" + fieldName }
+          />
         </div>
 
         {this.childrenWithProps()}
