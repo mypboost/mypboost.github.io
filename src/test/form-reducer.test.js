@@ -3,8 +3,9 @@ import Immutable from 'immutable';
 import { defaultForm } from '../reducers/default-state';
 import * as Actions from '../actions/actions';
 
-const formAction = (action, formState = defaultForm) => {
-  return formReducer(formState, action);
+const formAction = (action, formState) => {
+  const state = formState ? defaultForm.merge(formState) : defaultForm;
+  return formReducer(state, action);
 }
 
 describe('updating fields', () => {
@@ -138,27 +139,49 @@ describe('updating fields', () => {
     expect(fieldShouldHaveErrors.size).toEqual(0)
   });
 
-  it('should fail form submission if there are errors', () => {
+  it('should fail form submission and set scrollToErrors if there are errors', () => {
     const state = formAction({type: Actions.SUBMIT_FORM})
     expect(state.get("canSubmit")).toEqual(false)
+    expect(state.get("scrollToErrors")).toEqual(true)
   });
 
-  it('should allow form submission if there are no errors', () => {
+  it('should allow form submission and set averages and gdd if there are no errors', () => {
     const state = formAction(
-      {type: Actions.SUBMIT_FORM},
+      { type: Actions.SUBMIT_FORM },
       Immutable.fromJS(
         {
           "fields": {
             "name": {"value": "foo"},
-            "age": {"value": "foo"},
-            "sex": {"value": "foo"},
+            "age": {"value": "16"},
+            "sex": {"value": "Male"},
             "email": {"value": "foo"}
+          },
+          "currentSliders": {
+            "Physical Health & Fitness": { value: 100 },
+            "Mental Health & Wellbeing": { value: 100 },
+            "Family & Friends": { value: 100 },
+            "Career & Work/Life Balance": { value: 100 },
+            "Wealth and Financial Wellbeing": { value: 100 },
+            "Self Actualization": { value: 100 },
+            "Overall Happiness": { value: 200 },
+          },
+          "goalSliders": {
+            "Physical Health & Fitness": { value: 600 },
+            "Mental Health & Wellbeing": { value: 620 },
+            "Family & Friends": { value: 300 },
+            "Career & Work/Life Balance": { value: 400 },
+            "Wealth and Financial Wellbeing": { value: 430 },
+            "Self Actualization": { value: 510 },
+            "Overall Happiness": { value: 990 },
           }
         }
       )
     )
 
-    expect(state.get("canSubmit")).toEqual(true)
+    expect(state.get("canSubmit")).toEqual(true);
+    expect(state.get("currentScore")).toEqual(167);
+    expect(state.get("goalScore")).toEqual(819);
+    expect(state.get("gdd")).toEqual(517);
   });
 
   it('setScrollToErrors should change to the provided boolean', () => {

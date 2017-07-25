@@ -20,28 +20,30 @@ class Form extends React.Component {
     this.props.onFormSubmit();
   }
 
-  submitIfValid(){
-    const {
-      canSubmit,
-      fields,
-      currentSliders,
-      goalSliders,
-      scrollToErrors,
-      setScrollToErrors
-    } = this.props;
+  componentDidUpdate(){
+    this.submitIfValid();
+  }
 
-    if (canSubmit) {
+  submitIfValid(){
+    if (this.props.canSubmit) {
       this.props.history.push('/results.html');
-      postForm(fields, currentSliders, goalSliders);
+      this.postForm()
     }
-    else if(scrollToErrors === true) {
+    else if(this.props.scrollToErrors === true) {
       scrollTo('form-errors-anchor', 20);
-      setScrollToErrors(false);
+      this.props.setScrollToErrors(false);
     }
   }
 
-  componentDidUpdate(){
-    this.submitIfValid();
+  postForm() {
+    postForm(Immutable.fromJS({
+      fields: this.props.fields,
+      currentSliders: this.props.currentSliders,
+      goalSliders: this.props.goalSliders,
+      currentScore: this.props.currentScore,
+      goalScore: this.props.goalScore,
+      gdd: this.props.gdd
+    }));
   }
 
   render() {

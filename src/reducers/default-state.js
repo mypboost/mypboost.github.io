@@ -35,7 +35,10 @@ export const defaultForm = Immutable.fromJS({
   goalSliders: defaultSliders,
   fields: defaultFields,
   canSubmit: false,
-  scrollToErrors: false
+  scrollToErrors: false,
+  currentScore: defaultSliderValue,
+  goalScore: defaultSliderValue,
+  gdd: defaultSliderValue
 });
 
 const StateRecord = Immutable.Record({
