@@ -11,9 +11,10 @@ import '../style/results.scss';
 class Results extends React.Component {
 
   render(){
-    const { currentSliders, goalSliders } = this.props;
-    const name =
-      this.props.fields.getIn(["name", "value"]) || "NAME";
+    const { currentSliders, goalSliders, fields, currentScore, goalScore, gdd } = this.props;
+    const name = fields.getIn(["name", "value"]) || "NAME";
+    const sex = fields.getIn(["sex", "value"]) || "SOME GENDER";
+    const gulf = goalScore - currentScore;
 
     return (
       <Page>
@@ -60,9 +61,9 @@ class Results extends React.Component {
         </h3>
 
         <p className="body focus-on-text">
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution
+          You're currently scoring { currentScore } (out of 1000). On average a&nbsp;
+          { sex } your age scores { gdd }. According to your math you're still&nbsp;
+          { gulf } points of your aspirational MYPCo goal of { goalScore }.
         </p>
 
       </Page>

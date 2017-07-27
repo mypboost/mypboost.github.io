@@ -14,6 +14,9 @@ const mapStateToProps = (state) => ({
   currentSliders: state.getIn(["form", "currentSliders"]),
   goalSliders: state.getIn(["form", "goalSliders"]),
   fields: state.getIn(["form", "fields"]),
+  currentScore: state.getIn(["form", "currentScore"]),
+  goalScore: state.getIn(["form", "goalScore"]),
+  gdd: state.getIn(["form", "gdd"]),
   canSubmit: state.getIn(["form", "canSubmit"]),
   scrollToErrors: state.getIn(["form", "scrollToErrors"])
 });
