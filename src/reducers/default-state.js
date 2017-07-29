@@ -6,7 +6,7 @@ const defaultSliders = Immutable.fromJS({
   "Mental Health & Wellbeing": {value: defaultSliderValue, className: "yellow"},
   "Family & Friends": {value: defaultSliderValue, className: "pink"},
   "Career & Work/Life Balance": {value: defaultSliderValue, className: "orange"},
-  "Wealth and Financial Wellbeing": {value: defaultSliderValue, className: "red"},
+  "Wealth & Financial Wellbeing": {value: defaultSliderValue, className: "red"},
   "Self Actualization": {value: defaultSliderValue, className: "blue"},
   "Overall Happiness": {value: defaultSliderValue, className: "lime"},
 });

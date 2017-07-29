@@ -159,7 +159,7 @@ class Form extends React.Component {
             group={"goalSliders"}
             />
           <button
-            className="form-submit-button"
+            className="lime-button"
             onClick={this.submitForm.bind(this)}
           >
             GENERATE MYPCO LITE SCORE
