@@ -85,7 +85,7 @@ const gdd = Immutable.fromJS({
       "86": { "Male": 40, "Female": 26 },
       "91": { "Male": 0, "Female": 0 }
     },
-    "Wealth and Financial Wellbeing": {
+    "Wealth & Financial Wellbeing": {
       "0": { "Male": 0, "Female": 0 },
       "6": { "Male": 0, "Female": 0 },
       "11": { "Male": 14, "Female": 9 },

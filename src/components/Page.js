@@ -7,8 +7,9 @@ class Page extends React.Component {
 
 
   render() {
+    const className = this.props.className || "";
     return (
-      <div className="page">
+      <div className={ "page " + className }>
         {this.props.children}
       </div>
     );
@@ -16,7 +17,8 @@ class Page extends React.Component {
 }
 
 Page.propTypes = {
-  children: PropTypes.array
+  children: PropTypes.array,
+  className: PropTypes.string
 };
 
 export default Page;

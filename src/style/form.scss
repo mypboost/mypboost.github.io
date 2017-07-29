@@ -39,18 +39,3 @@
 .section-three-text {
   margin-bottom: 30px;
 }
-
-.form-submit-button {
-  background-color: $lime;
-  font-weight: 600;
-  font-size: 13px;
-  padding: 12px 21px;
-  border-radius: 4px; color: black;
-  border: 0;
-  cursor: pointer;
-
-  &:hover {
-    background-color: black;
-    color: $lime;
-  }
-}

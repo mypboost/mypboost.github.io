@@ -15,9 +15,46 @@ h1, h2, h3, h4, h5, p, a, button, li, ul, span {
   text-align: center;
 }
 
+.large-header {
+  color: $lime;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
 
 .small-header {
   text-align: center;
   font-weight: 500;
   font-size: 19px;
+}
+
+.section-header {
+  font-size: 26px;
+  text-align: center;
+}
+
+.form {
+  text-align: center;
+}
+
+.body {
+  color: white;
+  text-align: center;
+}
+
+.lime-button {
+  background-color: $lime;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 17px 33px;
+  display: inline-block;
+  border-radius: 4px; color: black;
+  border: 0;
+  cursor: pointer;
+
+  &:hover {
+    background-color: black;
+    color: $lime;
+  }
 }

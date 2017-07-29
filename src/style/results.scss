@@ -1,7 +1,85 @@
 @import "./_colours";
 
+.results-top-page {
+  margin-bottom: 40px;
+}
+
 .score-card-header {
   margin-bottom: 27px;
 }
 
+.focus-on-header {
+  margin-bottom: 25px;
+  font-size: 18px;
+}
 
+.focus-on-text-1 {
+  font-weight: 300;
+  font-size: 14px;
+  margin-bottom: 25px;
+  line-height: 21px;
+  color: $grey;
+
+  span {
+    color: $lime;
+    font-weight: 400;
+  }
+}
+
+.focus-on-text-2 {
+  margin-bottom: 25px;
+  font-size: 14px;
+  line-height: 21px;
+
+  span {
+    color: $lime;
+  }
+}
+
+.focus-on-text-3 {
+  font-weight: 300;
+  font-size: 14px;
+  margin-bottom: 35px;
+  color: $grey;
+}
+
+
+.white-page {
+  background-color: white;
+  padding: 50px 0;
+  border-width: 0px;
+  text-align: center;
+
+  .large-header {
+    color: $navy-blue;
+    font-size: 29px;
+    margin-bottom: 45px;
+  }
+
+  img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .body {
+    color: $navy-blue;
+    padding: 0 50px;
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 25px;
+
+    span {
+      font-weight: 600;
+      color: $navy-blue;
+    }
+
+    a {
+      color: $blue;
+      text-decoration: none;
+    }
+  }
+
+  .block-2 {
+    margin-bottom: 35px;
+  }
+}

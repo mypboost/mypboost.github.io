@@ -5,6 +5,7 @@ import Immutable from 'immutable';
 import Page from './Page';
 import ResultsTable from './ResultsTable';
 import ScoreCard from './ScoreCard';
+import FocusOn from './FocusOn';
 
 import '../style/results.scss';
 
@@ -13,60 +14,108 @@ class Results extends React.Component {
   render(){
     const { currentSliders, goalSliders, fields, currentScore, goalScore, gdd } = this.props;
     const name = fields.getIn(["name", "value"]) || "NAME";
-    const sex = fields.getIn(["sex", "value"]) || "SOME GENDER";
+    const sex = fields.getIn(["sex", "value"]) || "GENDER";
     const gulf = goalScore - currentScore;
 
     return (
-      <Page>
-        <h2 className="large-header">Your MYPCO Lite Score</h2>
-        <p className="body form-intro-text">
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution
-        </p>
+      <div className="results-wrapper">
+        <Page className="results-top-page">
+          <h2 className="large-header">Your MYPCO Lite Score</h2>
+          <p className="body form-intro-text">
+            It is a long established fact that a reader will be distracted by the
+            readable content of a page when looking at its layout. The point of
+            using Lorem Ipsum is that it has a more-or-less normal distribution
+          </p>
 
-        <ResultsTable
-          currentSliders={currentSliders}
-          goalSliders={goalSliders}
-        />
-
-        <h3 className="small-header score-card-header">
-          MYPCo Lite Overall Scores
-        </h3>
-
-        <div className="score-card-container">
-          <ScoreCard
-            name={"GDD"}
-            tooltipText={"sweet tips"}
-            numerator={100}
-            denominator={1000}
+          <ResultsTable
+            currentSliders={currentSliders}
+            goalSliders={goalSliders}
           />
-          <ScoreCard
-            name={"Current"}
-            tooltipText={"sweet tips"}
-            numerator={100}
-            denominator={1000}
-            className="highlighted"
+
+          <h3 className="small-header score-card-header">
+            MYPCo Lite Overall Scores
+          </h3>
+
+          <div className="score-card-container">
+            <ScoreCard
+              name="GDD"
+              tooltipText="sweet tips"
+              numerator={ gdd }
+              denominator={ 1000 }
+            />
+            <ScoreCard
+              name="Current"
+              tooltipText="sweet tips"
+              numerator={ currentScore }
+              denominator={ 1000 }
+              className="highlighted"
+            />
+            <ScoreCard
+              name="Goal"
+              tooltipText="sweet tips"
+              numerator={ goalScore }
+              denominator={ 1000 }
+            />
+          </div>
+
+          <h3 className="small-header focus-on-header">
+          Great job, { name }!
+          </h3>
+
+          <p className="body focus-on-text-1">
+            You're currently scoring&nbsp;
+            <span>{ currentScore }</span> (out of 1000). On average a&nbsp;
+            { sex } your age scores&nbsp;
+            <span>{ gdd }</span>. According to your math you're still&nbsp;
+            <span>{ gulf }</span> points of your aspirational MYPCo goal of&nbsp;
+            <span>{ goalScore }</span>.
+          </p>
+
+          <p className="body focus-on-text-2">
+            Let's begin your journey towards <span>{ goalScore }</span> now!
+          </p>
+
+          <p className="body focus-on-text-3">
+            Based on your results we recommend you focus on these 3 MYP dimensions: 
+          </p>
+
+          <FocusOn 
+            currentSliders={ currentSliders }
+            goalSliders={ goalSliders }
           />
-          <ScoreCard
-            name={"Goal"}
-            tooltipText={"sweet tips"}
-            numerator={100}
-            denominator={1000}
-          />
-        </div>
 
-        <h3 className="small-header focus-on-header">
-         Great job, { name }!
-        </h3>
+        </Page>
 
-        <p className="body focus-on-text">
-          You're currently scoring { currentScore } (out of 1000). On average a&nbsp;
-          { sex } your age scores { gdd }. According to your math you're still&nbsp;
-          { gulf } points of your aspirational MYPCo goal of { goalScore }.
-        </p>
+        <Page className="white-page">
+          <h2 className="large-header">Start Maximising Your Potential Today!</h2>
 
-      </Page>
+          <img src='./assets/boost-graphic.png' />
+
+          <p className="body block-1">
+            <span>MYP BOOST</span> is the best tool to get you working towards&nbsp;
+            your aspirational MYPCo score. As an <span>MYP BOOST</span> member&nbsp;
+            you will get access to six weekly <span>MYP BOOST</span> videos,&nbsp;
+            notes and guides that will help you improve your MYPCO score.
+          </p>
+
+          <p className="body block-2">
+            For a short time only, we're offering early subscribers the chance&nbsp;
+            to sign up for this service on a special rate of&nbsp;
+            <span>just £9.99 per month</span>. That's access to six videos&nbsp;
+            (including extra additional content), four times a month for price&nbsp;
+            of one lunch. Please <a href="#">get in touch</a> if you'd like&nbsp;
+            more information, or you can make a commitment to yourself right&nbsp;
+            here, right now to subscribe to <span>MYP BOOST</span>...
+          </p>
+
+
+          <a className="lime-button">
+            SUBSCRIBE TO MYP BOOST
+          </a>
+
+
+        </Page>
+      </div>
     );
   }
 }

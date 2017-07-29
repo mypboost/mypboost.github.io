@@ -15,7 +15,7 @@ const currentSliderKeys = {
   "Mental Health & Wellbeing": "entry.69348868",
   "Family & Friends": "entry.135260925",
   "Career & Work/Life Balance": "entry.345041851",
-  "Wealth and Financial Wellbeing": "entry.1674782857",
+  "Wealth & Financial Wellbeing": "entry.1674782857",
   "Self Actualization": "entry.525176522",
   "Overall Happiness": "entry.158168460"
 };
@@ -25,7 +25,7 @@ const goalSliderKeys = {
   "Mental Health & Wellbeing": "entry.1036334072",
   "Family & Friends": "entry.2101903718",
   "Career & Work/Life Balance": "entry.278394668",
-  "Wealth and Financial Wellbeing": "entry.1321808841",
+  "Wealth & Financial Wellbeing": "entry.1321808841",
   "Self Actualization": "entry.482196849",
   "Overall Happiness": "entry.130879393"
 };

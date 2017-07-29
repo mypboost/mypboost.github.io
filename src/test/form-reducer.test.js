@@ -161,7 +161,7 @@ describe('updating fields', () => {
             "Mental Health & Wellbeing": { value: 100 },
             "Family & Friends": { value: 100 },
             "Career & Work/Life Balance": { value: 100 },
-            "Wealth and Financial Wellbeing": { value: 100 },
+            "Wealth & Financial Wellbeing": { value: 100 },
             "Self Actualization": { value: 100 },
             "Overall Happiness": { value: 200 },
           },
@@ -170,7 +170,7 @@ describe('updating fields', () => {
             "Mental Health & Wellbeing": { value: 620 },
             "Family & Friends": { value: 300 },
             "Career & Work/Life Balance": { value: 400 },
-            "Wealth and Financial Wellbeing": { value: 430 },
+            "Wealth & Financial Wellbeing": { value: 430 },
             "Self Actualization": { value: 510 },
             "Overall Happiness": { value: 990 },
           }
