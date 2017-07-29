@@ -12,6 +12,7 @@ import '../style/results.scss';
 class Results extends React.Component {
 
   render(){
+
     const { currentSliders, goalSliders, fields, currentScore, goalScore, gdd } = this.props;
     const name = fields.getIn(["name", "value"]) || "NAME";
     const sex = fields.getIn(["sex", "value"]) || "GENDER";
