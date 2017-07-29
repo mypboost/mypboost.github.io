@@ -11,6 +11,15 @@
   box-sizing: border-box;
   text-align: left;
 
+
+  .errors {
+    p {
+      text-align: left;
+      color: $red;
+      padding-top: 6px;
+    }
+  }
+
   .info {
      margin-bottom: 10px;
 

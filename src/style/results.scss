@@ -14,11 +14,7 @@
 }
 
 .focus-on-text-1 {
-  font-weight: 300;
-  font-size: 14px;
   margin-bottom: 25px;
-  line-height: 21px;
-  color: $grey;
 
   span {
     color: $lime;
@@ -28,8 +24,8 @@
 
 .focus-on-text-2 {
   margin-bottom: 25px;
-  font-size: 14px;
-  line-height: 21px;
+  color: white !important;
+  font-weight: 400 !important;
 
   span {
     color: $lime;
@@ -37,10 +33,7 @@
 }
 
 .focus-on-text-3 {
-  font-weight: 300;
-  font-size: 14px;
   margin-bottom: 35px;
-  color: $grey;
 }
 
 

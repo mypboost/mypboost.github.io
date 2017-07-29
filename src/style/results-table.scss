@@ -2,6 +2,8 @@
 
 .results-table {
   margin-bottom: 27px;
+  font-size: 14px;
+  font-weight: 300;
 
   .row {
     display: flex;
@@ -11,9 +13,12 @@
   }
 
   .title-row {
+    font-weight: 400;
+
     .column2 {
       background-color: transparent;
-      color: white
+      color: white;
+      font-weight: 400;
     }
   }
 
@@ -35,6 +40,7 @@
   .column2 {
     background-color: $lime;
     color: black;
+    font-weight: 600;
   }
 
   .purple-name {

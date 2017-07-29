@@ -29,7 +29,7 @@ class FormElement extends React.Component {
 
   createError(error) {
     return(
-      <p key={error}>
+      <p className="body" key={error}>
         {error}
       </p>
     );

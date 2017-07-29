@@ -12,7 +12,6 @@ import '../style/results.scss';
 class Results extends React.Component {
 
   render(){
-
     const { currentSliders, goalSliders, fields, currentScore, goalScore, gdd } = this.props;
     const name = fields.getIn(["name", "value"]) || "NAME";
     const sex = fields.getIn(["sex", "value"]) || "GENDER";
@@ -23,9 +22,10 @@ class Results extends React.Component {
         <Page className="results-top-page">
           <h2 className="large-header">Your MYPCO Lite Score</h2>
           <p className="body form-intro-text">
-            It is a long established fact that a reader will be distracted by the
-            readable content of a page when looking at its layout. The point of
-            using Lorem Ipsum is that it has a more-or-less normal distribution
+            Thanks for taking the time to generate your MYPCo Lite SCore. You'll be&nbsp;
+            happy to know that you're well on your way towards maximising your&nbsp;
+            potential... the first step is always the hardest! We've done the math&nbsp;
+            and your scores are listed below:
           </p>
 
           <ResultsTable
@@ -66,7 +66,7 @@ class Results extends React.Component {
           <p className="body focus-on-text-1">
             You're currently scoring&nbsp;
             <span>{ currentScore }</span> (out of 1000). On average a&nbsp;
-            { sex } your age scores&nbsp;
+            { sex.toLowerCase() } your age scores&nbsp;
             <span>{ gdd }</span>. According to your math you're still&nbsp;
             <span>{ gulf }</span> points of your aspirational MYPCo goal of&nbsp;
             <span>{ goalScore }</span>.

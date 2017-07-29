@@ -3,6 +3,7 @@
 
 body {
   background-color: $navy-blue;
+  padding-bottom: 50px;
 }
 
 h1, h2, h3, h4, h5, p, a, button, li, ul, span {
@@ -39,8 +40,11 @@ h1, h2, h3, h4, h5, p, a, button, li, ul, span {
 }
 
 .body {
-  color: white;
+  color: $light-grey;
   text-align: center;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
 }
 
 .lime-button {
