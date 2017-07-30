@@ -1,6 +1,10 @@
 @import "./_colours";
 @import "./reset";
 
+html {
+  width: 100%;
+}
+
 body {
   background-color: $navy-blue;
   padding-bottom: 50px;
@@ -14,6 +18,8 @@ h1, h2, h3, h4, h5, p, a, button, li, ul, span {
 .site-header {
   margin: 25px 0 35px;
   text-align: center;
+  width: 100%;
+  overflow: hidden;
 }
 
 .large-header {
