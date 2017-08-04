@@ -98,27 +98,25 @@ class Results extends React.Component {
           <img src='./assets/boost-graphic.png' />
 
           <p className="body block-1">
-            <span>MYP BOOST</span> is the best tool to get you working towards&nbsp;
-            your aspirational MYPCo. score. As an <span>MYP BOOST</span> member&nbsp;
-            you will get access to six weekly <span>MYP BOOST</span> videos,&nbsp;
-            notes and guides that will help you to improve your MYPCo. score.
+            <span>MYP BOOST</span> is the best tool to get you working towards
+            your aspirational MYPCo. score. As an <span>MYP BOOST</span> member
+            you will get access to six weekly <span>MYP BOOST</span> videos, notes 
+			and guides that will help you to improve your MYPCo. score.
           </p>
 
           <p className="body block-2">
-            For a short time only, we’re offering early subscribers the chance&nbsp;
-            to sign up for this service on a special rate of&nbsp;
-            <span>just £9.99 per month</span>. That’s access to six videos&nbsp;
-            (including extra additional content), four times a month for the price&nbsp;
-            of one lunch. Please <a href="#">get in touch</a> if you’d like&nbsp;
-            more information, or you can make a commitment to yourself right&nbsp;
-            here, right now and subscribe to <span>MYP BOOST</span>...
+            For a short time only, we’re offering early subscribers the chance to 
+			sign up for this service on a special rate of <span>just £9.99 per 
+			month</span>. That’s access to six videos (including extra additional 
+			content), four times a month for the price of one lunch. Please 
+			<a href="#">get in touch</a> if you’d like more information, or you 
+			can make a commitment to yourself right here, right now and subscribe 
+			to <span>MYP BOOST</span>...
           </p>
-
 
           <a className="lime-button">
             SUBSCRIBE TO MYP BOOST
           </a>
-
 
         </Page>
       </div>
