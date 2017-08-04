@@ -50,11 +50,11 @@ class Form extends React.Component {
     const { name, age, sex, email } = this.props.fields.toJS();
     return (
       <Page>
-        <h2 className="large-header">MYPCO Lite Score Generator</h2>
+        <h2 className="large-header">MYPCo. Lite Score Generator</h2>
         <p className="body form-intro-text">
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution
+          Welcome to MYP Boost! YOU have made a commitment to YOURSELF and to those 
+		who are close to YOU. The key to MYP and YOUR success is the application of 
+		small consistent steps applied daily to YOUR routine.
         </p>
 
         <Divider className="step-1-divider">
@@ -68,7 +68,7 @@ class Form extends React.Component {
         <form className="form">
           <div className="form-element-container">
             <FormElement
-              fieldTitle="Your Full Name"
+              fieldTitle="Your Name"
               currentValue={name.value}
               errors={name.errors}
               placeholder="Your Name"
@@ -82,7 +82,8 @@ class Form extends React.Component {
 
             <FormElement
               fieldTitle="Your Age"
-              info="Your age tooltip"
+              info="Your age is required for us to generate your personal MYPCo. 
+			  score."
               currentValue={age.value}
               errors={age.errors}
               placeholder="Your Age"
@@ -96,7 +97,8 @@ class Form extends React.Component {
 
             <FormElement
               fieldTitle="Your Sex"
-              info="Your sex tooltip"
+              info="Your sex is required for us to generate your personal MYPCo. 
+			  score."
               fieldName="sex"
               onFieldUpdate={this.props.onFieldUpdate}
               currentValue={sex.value}
@@ -130,8 +132,9 @@ class Form extends React.Component {
           </h3>
 
           <p className="body section-two-text">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout.
+            Using the sliders below, please tell us where you’d currently rank 
+			yourself (on a scale of 0-1000) in each of our MYP BIG6 Life 
+			Dimensions and your overall happiness.
           </p>
 
           <Sliders
@@ -149,8 +152,9 @@ class Form extends React.Component {
           </h3>
 
           <p className="body section-three-text">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout.
+            You have told us where you are currently with regards to your MYP life 
+			dimensions. Now for the exciting part of the process... We want to know 
+			where you want to be. What are your aspirational scores for each dimension?
           </p>
 
           <Sliders
@@ -158,6 +162,14 @@ class Form extends React.Component {
             sliders={this.props.goalSliders}
             group={"goalSliders"}
             />
+			
+          <p className="body section-three-generate-text">
+            Now you have identified your current situation and your aspirational one. 
+			It’s time to calculate your MYPCo. score. This will identify your current 
+			score and your aspirational score. We’ll also compare how you stack up 
+			against your peers through our GDD (Global Demographic Database).
+          </p>
+			
           <button
             className="lime-button"
             onClick={this.submitForm.bind(this)}
