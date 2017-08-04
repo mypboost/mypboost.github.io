@@ -21,7 +21,10 @@ class Results extends React.Component {
       <div className="results-wrapper">
         <Page className="results-top-page">
           <h2 className="large-header">Your MYPCo. Lite Score</h2>
-          <p className="body form-intro-text">Thanks for taking the time to generate your MYPCo. Lite Score. You’ll be happy to know that you’re well on your way towards maximising your potential... the first step is always the hardest! We’ve done the math and your scores are listed below:</p>
+          <p className="body form-intro-text">Thanks for taking the time to generate 
+		your MYPCo. Lite Score. You’ll be happy to know that you’re well on your way 
+		towards maximising your potential... the first step is always the hardest! 
+		We’ve done the math and your scores are listed below:</p>
 
           <ResultsTable
             currentSliders={currentSliders}
@@ -35,13 +38,15 @@ class Results extends React.Component {
           <div className="score-card-container">
             <ScoreCard
               name="GDD"
-              tooltipText="Your GDD (global demographic data) score shows the average score for someone of your age/sex."
+              tooltipText="Your GDD (global demographic data) score shows the average 
+			score for someone of your age/sex."
               numerator={ gdd }
               denominator={ 1000 }
             />
             <ScoreCard
               name="Current"
-              tooltipText="Your current score based on your self assessment on the previous page."
+              tooltipText="Your current score based on your self assessment on the 
+			  previous page."
               numerator={ currentScore }
               denominator={ 1000 }
               className="highlighted"
