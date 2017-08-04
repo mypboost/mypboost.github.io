@@ -7,7 +7,8 @@ const mapStateToProps = (state) => ({
   fields: state.getIn(["form", "fields"]),
   currentScore: state.getIn(["form", "currentScore"]),
   goalScore: state.getIn(["form", "goalScore"]),
-  gdd: state.getIn(["form", "gdd"]),
+  gddValues: state.getIn(["form", "gddValues"]),
+  overallGdd: state.getIn(["form", "overallGdd"]),
 });
 
 const mapDispatchToProps = {

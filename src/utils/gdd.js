@@ -168,7 +168,7 @@ const parseSex = (state) => {
   return sex;
 };
 
-export const getGdd = (state) => {
+export const getOverallGdd = (state) => {
   const age = parseAge(state);
   const sex = parseSex(state);
 
@@ -180,6 +180,15 @@ export const getGdd = (state) => {
 
   const happinessValue = gdd.getIn(["Overall Happiness", String(age), sex]);
 
-  return Math.round((averageScore + (happinessValue * 2)) / 3); 
+  return Math.round((averageScore + (happinessValue * 2)) / 3);
+};
+
+export const getGddValues = (state) => {
+  const age = parseAge(state);
+  const sex = parseSex(state);
+
+  return gdd.reduce((reduction, value, key) => {
+    return reduction.set(key, value.getIn([String(age), sex]));
+  }, Immutable.Map());
 };
 

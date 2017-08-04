@@ -25,29 +25,29 @@ class FocusOn extends React.Component {
 
     switch(fieldName) {
       case "Physical Health & Fitness":
-        pathName += "physical_health-purple.png"
+        pathName += "physical_health-purple.png";
         color = "purple";
-        break
+        break;
       case "Mental Health & Wellbeing":
-        pathName += "mental_health-yellow.png"
+        pathName += "mental_health-yellow.png";
         color = "yellow";
-        break
+        break;
       case "Family & Friends":
-        pathName += "family-pink.png"
+        pathName += "family-pink.png";
         color = "pink";
-        break
+        break;
       case "Career & Work/Life Balance":
-        pathName += "career-orange.png"
+        pathName += "career-orange.png";
         color = "orange";
-        break
+        break;
       case "Wealth & Financial Wellbeing":
-        pathName += "wealth-red.png"
+        pathName += "wealth-red.png";
         color = "red";
-        break
+        break;
       case "Self Actualization":
-        pathName += "self_actualisation-blue.png"
+        pathName += "self_actualisation-blue.png";
         color = "blue";
-        break
+        break;
     }
 
     return (
@@ -59,14 +59,14 @@ class FocusOn extends React.Component {
   }
 
   renderIcons() {
-    return this.threeLargestGulfs().reduce((reduction, value, key) => { 
-      reduction.push(this.renderIcon(key))
-      return reduction
-    }, [])
+    return this.threeLargestGulfs().reduce((reduction, value, key) => {
+      reduction.push(this.renderIcon(key));
+      return reduction;
+    }, []);
   }
 
   render(){
-    const icons = this.renderIcons()
+    const icons = this.renderIcons();
     return (
       <div className="focus-on-icons">
         { icons }
