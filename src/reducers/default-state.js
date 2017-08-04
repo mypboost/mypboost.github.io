@@ -11,6 +11,16 @@ const defaultSliders = Immutable.fromJS({
   "Overall Happiness": {value: defaultSliderValue, className: "lime"},
 });
 
+const defaultGddResults = Immutable.fromJS({
+  "Physical Health & Fitness": defaultSliderValue,
+  "Mental Health & Wellbeing": defaultSliderValue,
+  "Family & Friends": defaultSliderValue,
+  "Career & Work/Life Balance": defaultSliderValue,
+  "Wealth & Financial Wellbeing": defaultSliderValue,
+  "Self Actualization": defaultSliderValue,
+  "Overall Happiness": defaultSliderValue
+});
+
 const defaultFields = Immutable.fromJS({
   "name": {
     "value": "",
@@ -38,7 +48,8 @@ export const defaultForm = Immutable.fromJS({
   scrollToErrors: false,
   currentScore: defaultSliderValue,
   goalScore: defaultSliderValue,
-  gdd: defaultSliderValue
+  gddValues: defaultGddResults,
+  overallGdd: defaultSliderValue
 });
 
 const StateRecord = Immutable.Record({

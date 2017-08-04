@@ -45,13 +45,13 @@ export const buildParameters = (state) => {
   parameters[fieldKeys['currentScore']] = state.get('currentScore');
   parameters[fieldKeys['goalScore']] = state.get('goalScore');
   parameters[fieldKeys['gdd']] = state.get('gdd');
-  
+
   return parameters;
 };
 
 const parameterizeForm = (state) => {
   let formData = new FormData();
-  const parameters = buildParameters(state)
+  const parameters = buildParameters(state);
 
   for (const key in parameters) { formData.append(key, parameters[key]); }
 

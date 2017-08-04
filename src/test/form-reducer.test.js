@@ -181,7 +181,18 @@ describe('updating fields', () => {
     expect(state.get("canSubmit")).toEqual(true);
     expect(state.get("currentScore")).toEqual(167);
     expect(state.get("goalScore")).toEqual(819);
-    expect(state.get("gdd")).toEqual(517);
+    expect(state.get("overallGdd")).toEqual(517);
+    expect(state.get("gddValues").toJS()).toEqual(
+      {
+        "Career & Work/Life Balance": 36,
+        "Family & Friends": 612,
+        "Mental Health & Wellbeing": 516,
+        "Overall Happiness": 612,
+        "Physical Health & Fitness": 644,
+        "Self Actualization": 129,
+        "Wealth & Financial Wellbeing": 27
+      }
+    );
   });
 
   it('setScrollToErrors should change to the provided boolean', () => {

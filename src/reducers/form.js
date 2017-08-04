@@ -1,6 +1,6 @@
 import Immutable from 'immutable';
 import * as Actions from '../actions/actions.js';
-import { getGdd } from '../utils/gdd.js';
+import { getOverallGdd, getGddValues } from '../utils/gdd.js';
 
 const form = (state, action) => {
   switch (action.type) {
@@ -27,14 +27,14 @@ const updateField  = (state, name, value) => {
   let newState = state;
 
   if (!state.getIn(["fields", name, "errors"]).isEmpty()) {
-    newState = validateFields(state, name, value);
+    newState = validateField(state, name, value);
   }
 
   return newState.setIn(["fields", name, "value"], value);
 };
 
 const blurField = (state, name, value) => {
-  return validateFields(state, name, value);
+  return validateField(state, name, value);
 };
 
 const submitForm = (state) => {
@@ -42,7 +42,7 @@ const submitForm = (state) => {
   let hasErrors = false;
 
   state.get("fields").forEach((value, key) => {
-    newState = validateFields(newState, key, value.get("value"));
+    newState = validateField(newState, key, value.get("value"));
     if (!newState.getIn(["fields", key, "errors"]).isEmpty()) hasErrors = true;
   });
 
@@ -63,9 +63,10 @@ const setAveragesAndGdd = (state) => {
   const currentScore = generateScore(state.get('currentSliders'));
   const goalScore = generateScore(state.get('goalSliders'));
 
-  let newState = state.set('currentScore', currentScore)
-  newState = newState.set('goalScore', goalScore)
-  newState = newState.set('gdd', getGdd(newState));
+  let newState = state.set('currentScore', currentScore);
+  newState = newState.set('goalScore', goalScore);
+  newState = newState.set('overallGdd', getOverallGdd(newState));
+  newState = newState.set('gddValues', getGddValues(newState));
 
   return newState;
 
@@ -80,16 +81,25 @@ const generateScore = (sliders) => {
 
   const happinessValue = sliders.getIn(["Overall Happiness", 'value']);
 
-  return Math.round((averageScore + (happinessValue * 2)) / 3); 
+  return Math.round((averageScore + (happinessValue * 2)) / 3);
 };
 
-const validateFields = (state, name, fieldState) => {
+const validateField = (state, name, fieldState) => {
 
   let newState = state;
   let errors = Immutable.List();
 
   if (fieldState === "") {
-    errors = errors.push("This field cannot be empty");
+    if (name == 'sex') {
+      errors = errors.push("Please select an option");
+    }
+    else {
+      errors = errors.push("This field cannot be empty");
+    }
+  }
+
+  if (name === 'age' && (isNaN(fieldState) || parseInt(fieldState) < 0)) {
+    errors = errors.push("Please enter a valid age.");
   }
 
   newState = newState.setIn(["fields", name, "errors"], errors);

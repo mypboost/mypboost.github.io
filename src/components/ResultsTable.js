@@ -17,15 +17,15 @@ class ResultsTable extends React.Component {
     );
   }
 
-  rows(currentSliders, goalSliders){
+  rows(currentSliders, goalSliders, gddValues){
     let rows = [];
 
     currentSliders.forEach((currentParameters, sliderName) => {
+      const gddValue = gddValues.get(sliderName);
       const goalValue = goalSliders.getIn([sliderName, "value"]);
       const currentValue = currentParameters.get("value");
       const className = currentParameters.get("className");
-      const gdd = "1000";
-      rows.push(this.createRow(className, sliderName, gdd, currentValue, goalValue));
+      rows.push(this.createRow(className, sliderName, gddValue, currentValue, goalValue));
     });
 
     return rows;
@@ -35,7 +35,7 @@ class ResultsTable extends React.Component {
     return (
       <div className="results-table">
         {this.createRow("title", "MYP BIG6 Life Dimensions", "GDD", "Current", "Goal" )}
-        {this.rows(this.props.currentSliders, this.props.goalSliders)}
+        {this.rows(this.props.currentSliders, this.props.goalSliders, this.props.gddValues)}
       </div>
     );
   }
@@ -43,7 +43,8 @@ class ResultsTable extends React.Component {
 
 ResultsTable.propTypes = {
   currentSliders: PropTypes.instanceOf(Immutable.Map).isRequired,
-  goalSliders: PropTypes.instanceOf(Immutable.Map).isRequired
+  goalSliders: PropTypes.instanceOf(Immutable.Map).isRequired,
+  gddValues: PropTypes.instanceOf(Immutable.Map).isRequired
 };
 
 export default ResultsTable;

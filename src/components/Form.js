@@ -27,7 +27,7 @@ class Form extends React.Component {
   submitIfValid(){
     if (this.props.canSubmit) {
       this.props.history.push('/results.html');
-      this.postForm()
+      this.postForm();
     }
     else if(this.props.scrollToErrors === true) {
       scrollTo('form-errors-anchor', 20);
@@ -42,7 +42,7 @@ class Form extends React.Component {
       goalSliders: this.props.goalSliders,
       currentScore: this.props.currentScore,
       goalScore: this.props.goalScore,
-      gdd: this.props.gdd
+      gdd: this.props.overallGdd
     }));
   }
 
@@ -52,9 +52,9 @@ class Form extends React.Component {
       <Page>
         <h2 className="large-header">MYPCo. Lite Score Generator</h2>
         <p className="body form-intro-text">
-          Welcome to MYP Boost! YOU have made a commitment to YOURSELF and to those 
-		who are close to YOU. The key to MYP and YOUR success is the application of 
-		small consistent steps applied daily to YOUR routine.
+          Welcome to MYP Boost! YOU have made a commitment to YOURSELF and to those
+          who are close to YOU. The key to MYP and YOUR success is the application of
+          small consistent steps applied daily to YOUR routine.
         </p>
 
         <Divider className="step-1-divider">
@@ -82,8 +82,7 @@ class Form extends React.Component {
 
             <FormElement
               fieldTitle="Your Age"
-              info="Your age is required for us to generate your personal MYPCo. 
-			  score."
+              info="Your age is required for us to generate your personal MYPCo. score."
               currentValue={age.value}
               errors={age.errors}
               placeholder="Your Age"
@@ -97,8 +96,7 @@ class Form extends React.Component {
 
             <FormElement
               fieldTitle="Your Sex"
-              info="Your sex is required for us to generate your personal MYPCo. 
-			  score."
+              info="Your sex is required for us to generate your personal MYPCo. score."
               fieldName="sex"
               onFieldUpdate={this.props.onFieldUpdate}
               currentValue={sex.value}
@@ -132,9 +130,9 @@ class Form extends React.Component {
           </h3>
 
           <p className="body section-two-text">
-            Using the sliders below, please tell us where you’d currently rank 
-			yourself (on a scale of 0-1000) in each of our MYP BIG6 Life 
-			Dimensions and your overall happiness.
+            Using the sliders below, please tell us where you’d currently rank
+            yourself (on a scale of 0-1000) in each of our MYP BIG6 Life
+            Dimensions and your overall happiness.
           </p>
 
           <Sliders
@@ -152,9 +150,9 @@ class Form extends React.Component {
           </h3>
 
           <p className="body section-three-text">
-            You have told us where you are currently with regards to your MYP life 
-			dimensions. Now for the exciting part of the process... We want to know 
-			where you want to be. What are your aspirational scores for each dimension?
+            You have told us where you are currently with regards to your MYP life
+            dimensions. Now for the exciting part of the process... We want to know
+            where you want to be. What are your aspirational scores for each dimension?
           </p>
 
           <Sliders
@@ -162,14 +160,14 @@ class Form extends React.Component {
             sliders={this.props.goalSliders}
             group={"goalSliders"}
             />
-			
+
           <p className="body section-three-generate-text">
-            Now you have identified your current situation and your aspirational one. 
-			It’s time to calculate your MYPCo. score. This will identify your current 
-			score and your aspirational score. We’ll also compare how you stack up 
-			against your peers through our GDD (Global Demographic Database).
+            Now you have identified your current situation and your aspirational one.
+            It’s time to calculate your MYPCo. score. This will identify your current
+            score and your aspirational score. We’ll also compare how you stack up
+            against your peers through our GDD (Global Demographic Database).
           </p>
-			
+
           <button
             className="lime-button"
             onClick={this.submitForm.bind(this)}
@@ -186,6 +184,9 @@ Form.propTypes = {
   currentSliders: PropTypes.instanceOf(Immutable.Map).isRequired,
   goalSliders: PropTypes.instanceOf(Immutable.Map).isRequired,
   fields: PropTypes.instanceOf(Immutable.Map).isRequired,
+  currentScore: PropTypes.number.isRequired,
+  goalScore: PropTypes.number.isRequired,
+  overallGdd: PropTypes.number.isRequired,
   onSliderUpdate: PropTypes.func.isRequired,
   onFieldUpdate: PropTypes.func.isRequired,
   onFieldBlur: PropTypes.func.isRequired,
