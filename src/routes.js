@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 
 const Router = () => (
   <BrowserRouter>
-    <div className="main">
+    <div id='page-top-anchor' className="main">
       <div className="site-header">
         <img src="assets/logo/myp-logo.png" />
       </div>

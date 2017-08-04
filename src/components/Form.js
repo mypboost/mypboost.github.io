@@ -9,7 +9,7 @@ import FormInput from './FormInput';
 import FormSelection from './FormSelection';
 import Divider from './Divider';
 import { postForm } from '../utils/post-form';
-import { scrollTo } from '../utils/scroll-to';
+import scrollTo from '../utils/scroll-to';
 
 import '../style/form.scss';
 

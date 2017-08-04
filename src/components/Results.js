@@ -6,10 +6,15 @@ import Page from './Page';
 import ResultsTable from './ResultsTable';
 import ScoreCard from './ScoreCard';
 import FocusOn from './FocusOn';
+import scrollTo from '../utils/scroll-to';
 
 import '../style/results.scss';
 
 class Results extends React.Component {
+
+  componentDidMount(){
+    scrollTo('page-top-anchor', -100);
+  }
 
   render(){
     const { currentSliders, goalSliders, fields, currentScore, goalScore, gdd } = this.props;
