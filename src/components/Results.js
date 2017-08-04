@@ -20,13 +20,8 @@ class Results extends React.Component {
     return (
       <div className="results-wrapper">
         <Page className="results-top-page">
-          <h2 className="large-header">Your MYPCO Lite Score</h2>
-          <p className="body form-intro-text">
-            Thanks for taking the time to generate your MYPCo Lite SCore. You'll be&nbsp;
-            happy to know that you're well on your way towards maximising your&nbsp;
-            potential... the first step is always the hardest! We've done the math&nbsp;
-            and your scores are listed below:
-          </p>
+          <h2 className="large-header">Your MYPCo. Lite Score</h2>
+          <p className="body form-intro-text">Thanks for taking the time to generate your MYPCo. Lite Score. You’ll be happy to know that you’re well on your way towards maximising your potential... the first step is always the hardest! We’ve done the math and your scores are listed below:</p>
 
           <ResultsTable
             currentSliders={currentSliders}
@@ -34,26 +29,26 @@ class Results extends React.Component {
           />
 
           <h3 className="small-header score-card-header">
-            MYPCo Lite Overall Scores
+            MYPCo. Lite Overall Scores
           </h3>
 
           <div className="score-card-container">
             <ScoreCard
               name="GDD"
-              tooltipText="sweet tips"
+              tooltipText="Your GDD (global demographic data) score shows the average score for someone of your age/sex."
               numerator={ gdd }
               denominator={ 1000 }
             />
             <ScoreCard
               name="Current"
-              tooltipText="sweet tips"
+              tooltipText="Your current score based on your self assessment on the previous page."
               numerator={ currentScore }
               denominator={ 1000 }
               className="highlighted"
             />
             <ScoreCard
               name="Goal"
-              tooltipText="sweet tips"
+              tooltipText="Your goal score is where you aspire to be with the help of MYP."
               numerator={ goalScore }
               denominator={ 1000 }
             />
@@ -64,16 +59,16 @@ class Results extends React.Component {
           </h3>
 
           <p className="body focus-on-text-1">
-            You're currently scoring&nbsp;
+            You’re currently scoring&nbsp;
             <span>{ currentScore }</span> (out of 1000). On average a&nbsp;
             { sex.toLowerCase() } your age scores&nbsp;
-            <span>{ gdd }</span>. According to your math you're still&nbsp;
-            <span>{ gulf }</span> points of your aspirational MYPCo goal of&nbsp;
+            <span>{ gdd }</span>. According to our math you’re still&nbsp;
+            <span>{ gulf }</span> points off your aspirational MYPCo. goal of&nbsp;
             <span>{ goalScore }</span>.
           </p>
 
           <p className="body focus-on-text-2">
-            Let's begin your journey towards <span>{ goalScore }</span> now!
+            Let’s begin your journey towards <span>{ goalScore }</span> now!
           </p>
 
           <p className="body focus-on-text-3">
@@ -94,19 +89,19 @@ class Results extends React.Component {
 
           <p className="body block-1">
             <span>MYP BOOST</span> is the best tool to get you working towards&nbsp;
-            your aspirational MYPCo score. As an <span>MYP BOOST</span> member&nbsp;
+            your aspirational MYPCo. score. As an <span>MYP BOOST</span> member&nbsp;
             you will get access to six weekly <span>MYP BOOST</span> videos,&nbsp;
-            notes and guides that will help you improve your MYPCO score.
+            notes and guides that will help you to improve your MYPCo. score.
           </p>
 
           <p className="body block-2">
-            For a short time only, we're offering early subscribers the chance&nbsp;
+            For a short time only, we’re offering early subscribers the chance&nbsp;
             to sign up for this service on a special rate of&nbsp;
-            <span>just £9.99 per month</span>. That's access to six videos&nbsp;
-            (including extra additional content), four times a month for price&nbsp;
-            of one lunch. Please <a href="#">get in touch</a> if you'd like&nbsp;
+            <span>just £9.99 per month</span>. That’s access to six videos&nbsp;
+            (including extra additional content), four times a month for the price&nbsp;
+            of one lunch. Please <a href="#">get in touch</a> if you’d like&nbsp;
             more information, or you can make a commitment to yourself right&nbsp;
-            here, right now to subscribe to <span>MYP BOOST</span>...
+            here, right now and subscribe to <span>MYP BOOST</span>...
           </p>
 
 
