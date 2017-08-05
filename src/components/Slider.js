@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactSlider from 'react-slider';
-import Tooltip from './Tooltip';
 
 class Slider extends React.Component {
 
@@ -15,7 +14,6 @@ class Slider extends React.Component {
     return (
       <div className="slider-container">
         <h4 className="slider-title">{name}</h4>
-        <Tooltip text="test" id={"slidertooltip" + name} />
         <p className="slider-number">
           {value}
           <span className="denominator">/{maxValue}</span>
