@@ -113,13 +113,13 @@ class Results extends React.Component {
             For a short time only, we’re offering early subscribers the chance to
             sign up for this service on a special rate of <span>just £9.99 per
             month</span>. That’s access to six videos (including extra additional
-              content), four times a month for the price of one lunch. Please&nbsp;
-            <a href="#">get in touch</a> if you’d like more information, or you
-            can make a commitment to yourself right here, right now and subscribe
-            to <span>MYP BOOST</span>...
+            content), four times a month for the price of one lunch. Please&nbsp;
+            <a href="mailto:maxyourpotential@outlook.com">get in touch</a> if you’d
+            like more information, or you can make a commitment to yourself right
+            here, right now and subscribe to <span>MYP BOOST</span>...
           </p>
 
-          <a className="lime-button">
+          <a href="http://myp.global/promo/boost-landing.html" className="lime-button">
             SUBSCRIBE TO MYP BOOST
           </a>
 
