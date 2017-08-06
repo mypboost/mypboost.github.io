@@ -1,4 +1,5 @@
 @import "./_colours";
+@import "./_breakpoints";
 
 .form-element-container {
   display: flex;
@@ -36,7 +37,7 @@
     padding: 6px 5px;
     border-radius: 3px;
     width: 100%;
-	color: white;
+	  color: white;
   }
 
   input::placeholder {
@@ -46,17 +47,29 @@
 
 .name-input {
   flex: 0 0 75%;
+  @media screen and (max-width: $mobile-break) {
+    flex: 0 0 100%;
+  }
 }
 
 .age-input {
   flex: 0 0 20%;
+  @media screen and (max-width: $mobile-break) {
+    flex: 0 0 50%;
+  }
 }
 
 .sex-input {
   flex: 0 0 24%;
+  @media screen and (max-width: $mobile-break) {
+    flex: 0 0 100%;
+  }
 }
 
 .email-input {
   flex: 0 0 71%;
+  @media screen and (max-width: $mobile-break) {
+    flex: 0 0 100%;
+  }
 }
 
