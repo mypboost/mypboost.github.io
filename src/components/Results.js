@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Immutable from 'immutable';
 
 import Page from './Page';
+import Header from './Header';
+import Footer from './Footer';
 import ResultsTable from './ResultsTable';
 import ScoreCard from './ScoreCard';
 import FocusOn from './FocusOn';
@@ -22,7 +24,8 @@ class Results extends React.Component {
     const gulf = this.props.goalScore - this.props.currentScore;
 
     return (
-      <div className="results-wrapper">
+      <div className="main">
+        <Header />
         <Page className="results-top-page">
           <h2 className="large-header">Your MYPCo. Lite Score</h2>
           <p className="body form-intro-text">
@@ -121,6 +124,7 @@ class Results extends React.Component {
           </a>
 
         </Page>
+        <Footer />
       </div>
     );
   }

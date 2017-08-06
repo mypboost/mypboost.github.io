@@ -1,6 +1,100 @@
 @import "./_colours";
 
-.sidebar {
-  background-color: $lime;
-  position: absolute;
+$sidebar-width: 280px;
+
+.sidebar-wrapper {
+  overflow-x: hidden;
+
+  .main-open {
+    position: relative;
+    animation-name: body-open;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+   }
+
+  .main-closed {
+    position: relative;
+    animation-name: body-closed;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+   }
+
+  .sidebar {
+    box-sizing: border-box;
+    background-color: $lime;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    width: $sidebar-width;
+    padding-top: 20px;
+    display: none;
+
+    img {
+      display: block;
+      margin: auto;
+    }
+
+    .sidebar-link {
+      color: $navy-blue;
+      cursor: pointer;
+      margin: 20px 35px;
+    }
+
+    .active {
+      font-weight: 600;
+    }
+  }
+
+  .open {
+    display: block;
+    animation-name: menu-open;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+   }
+
+  .closed {
+    display: block;
+    animation-name: menu-closed;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+   }
+}
+
+@keyframes menu-open {
+    0% {
+      display: block;
+      left: -$sidebar-width;
+    }
+    100% {
+      left: 0;
+    }
+}
+
+@keyframes menu-closed {
+    0% {
+      display: block;
+      left: 0;
+    }
+    100% {
+      left: -$sidebar-width;
+      display: none;
+    }
+}
+
+@keyframes body-open {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: $sidebar-width;
+    }
+}
+
+@keyframes body-closed {
+    0% {
+      left: $sidebar-width;
+    }
+    100% {
+      left: 0;
+    }
 }

@@ -22,6 +22,24 @@ h1, h2, h3, h4, h5, p, a, button, li, ul, span {
   overflow: hidden;
 }
 
+.hamburger-container {
+  height: 0;
+  width: 650px;
+  margin: auto;
+  text-align: left;
+
+  .hamburger {
+    cursor: pointer;
+    position: relative;
+    bottom: 49;
+    font-size: 34px;
+
+    &:hover {
+      color: $lime;
+    }
+  }
+}
+
 .large-header {
   color: $lime;
   font-size: 36px;

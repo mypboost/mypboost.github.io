@@ -6,10 +6,9 @@ import '../style/sidebar.scss';
 class Sidebar extends React.Component {
 
   render() {
-    const currentVisibility = this.props.visible ? "visible" : "";
-
     return (
-      <div className={"sidebar " + currentVisibility}>
+      <div className={"sidebar " + this.props.animationState}>
+        <img src="./assets/boost-menu-logo.png" />
         {this.props.children}
       </div>
     );
@@ -17,7 +16,7 @@ class Sidebar extends React.Component {
 }
 
 Sidebar.propTypes = {
-  visible: PropTypes.bool,
+  animationState: PropTypes.string,
   children: PropTypes.oneOfType([
       PropTypes.array,
       PropTypes.element

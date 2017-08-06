@@ -1,10 +1,11 @@
 import React from 'react';
-import SidebarPage from '../SidebarPage';
+import Page from '../Page';
 
 export default class Week2 extends React.Component {
   render() {
     return (
-      <SidebarPage />
+      <Page>
+      </Page>
     );
   }
 }
