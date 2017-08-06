@@ -3,6 +3,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import Form from './containers/Form';
 import Results from './containers/Results';
+import Week1 from './components/video-pages/Week1';
+import Week2 from './components/video-pages/Week2Combined';
 import Footer from './components/Footer';
 
 const Router = () => (
@@ -13,8 +15,8 @@ const Router = () => (
       </div>
       <Route exact path="/" component={Form}/>
       <Route exact path="/results.html" component={Results}/>
-      <Route exact path="/mypco/build/" component={Form}/>
-      <Route exact path="/mypco/build/results.html" component={Results}/>
+      <Route exact path="/ahaon.html" component={Week1}/>
+      <Route exact path="/deux.html" component={Week2}/>
       <Footer />
     </div>
   </BrowserRouter>

@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../style/page.scss';
 
-
 class Page extends React.Component {
-
-
   render() {
     const className = this.props.className || "";
     return (
@@ -17,7 +14,10 @@ class Page extends React.Component {
 }
 
 Page.propTypes = {
-  children: PropTypes.array,
+  children: PropTypes.oneOfType([
+      PropTypes.array,
+      PropTypes.element
+  ]),
   className: PropTypes.string
 };
 

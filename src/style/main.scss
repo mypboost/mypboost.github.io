@@ -68,3 +68,18 @@ h1, h2, h3, h4, h5, p, a, button, li, ul, span {
     color: $lime;
   }
 }
+
+.white-button {
+  background-color: white;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 17px 33px;
+  display: inline-block;
+  border-radius: 4px; color: black;
+  border: 0;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $lime;
+  }
+}
