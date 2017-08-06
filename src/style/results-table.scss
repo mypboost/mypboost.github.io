@@ -1,10 +1,11 @@
 @import "./_colours";
+@import "./_breakpoints";
 
 .results-table {
   margin-bottom: 27px;
   font-size: 14px;
   font-weight: 300;
-
+  
   .row {
     display: flex;
     align-items: center;
@@ -29,12 +30,15 @@
   .name {
     margin-right: auto;
     margin-left: 10px;
+    @media screen and (max-width: $mobile-break) {
+      width: 200px;
+    }
   }
-
+  
   .column {
     width: 70px;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px 0;   
   }
 
   .column2 {
@@ -72,4 +76,3 @@
   }
 
 }
-
