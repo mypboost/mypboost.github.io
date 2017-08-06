@@ -1,0 +1,80 @@
+@import "./_colours";
+
+.video-page {
+  .purple { 
+    color: $purple;
+    a { 
+      color: $purple;
+      &:hover { color: $darker-purple; }
+    }
+   }
+
+  .yellow { color: $yellow; }
+  .pink { color: $pink; }
+  .orange { color: $orange; }
+  .red { color: $red; }
+  .blue { color: $blue; }
+
+  .body {
+    font-size: 16px;
+    margin-bottom: 20px;
+
+    span {
+      font-weight: 600;
+    }
+  }
+
+}
+
+.video-index-wrapper {
+  .icon {
+    width: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
+
+.video-wrapper {
+  text-align: center;
+
+  .white-button {
+    margin-bottom: 25px;
+    padding: 10px 33px;
+  }
+
+  .video-header {
+    font-size: 31px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+
+  .small-green-header {
+    color: $lime;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .videoWrapper {
+    margin-bottom: 30px;
+
+    iframe {
+      height: 360px;
+    }
+  }
+}
