@@ -9,11 +9,45 @@
     }
    }
 
-  .yellow { color: $yellow; }
-  .pink { color: $pink; }
-  .orange { color: $orange; }
-  .red { color: $red; }
-  .blue { color: $blue; }
+  .yellow { 
+    color: $yellow;
+    a { 
+      color: $yellow;
+      &:hover { color: $darker-yellow; }
+    }
+   }
+
+  .pink { 
+    color: $pink;
+    a { 
+      color: $pink;
+      &:hover { color: $darker-pink; }
+    }
+   }
+
+  .orange { 
+    color: $orange;
+    a { 
+      color: $orange;
+      &:hover { color: $darker-orange; }
+    }
+   }
+
+  .red { 
+    color: $red;
+    a { 
+      color: $red;
+      &:hover { color: $darker-red; }
+    }
+   }
+
+  .blue { 
+    color: $blue;
+    a { 
+      color: $blue;
+      &:hover { color: $darker-blue; }
+    }
+   }
 
   .body {
     font-size: 16px;

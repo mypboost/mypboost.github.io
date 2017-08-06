@@ -1,10 +1,12 @@
 import React from 'react';
 import Immutable from 'immutable';
 import PropTypes from 'prop-types';
-import VideoPage from './VideoPage';
+import VideoPage from '../VideoPage';
 
+//be sure to rename the class
 export default class Week1 extends React.Component {
-
+  //all the elements in these sections are contained in arrays and
+  //need to be separated by commas
   render() {
     const data = Immutable.fromJS({
       "Health & Fitness": {
@@ -195,7 +197,8 @@ export default class Week1 extends React.Component {
             never done this properly before. Do not put it off. Do it today.
           </p>,
           <p className="body" key={6}>
-            <a href="./assets/budget_template.xlsx">Download and complete a Budget sheet.
+            <a href="./assets/budget_template.xlsx">Download</a> and complete
+            a Budget sheet.
           </p>,
         ]
       },
@@ -203,13 +206,70 @@ export default class Week1 extends React.Component {
         "imagePath": "./assets/week1/blue.jpg",
         "videoLink": "pDpXUhtKbGM",
         "class": "blue",
-        "info": []
+        "info": [
+          <p className="body" key={1}>
+            Let’s get our head around this, its simple, honestly it is.
+            You just need to understand the different elements of Maslow’s
+            Hierarchy of needs.
+          </p>,
+          <h4 className="small-green-header" key={2}>
+            Let’s keep it simple
+          </h4>,
+          <p className="body" key={3}>
+            3 zones with 5 elements. Zone 1 - Physical requirements.
+            2 - Psychological needs. 3 - Self-Fulfilment.
+          </p>,
+          <p className="body" key={4}>
+            Element 1 - Physiological needs (food, water, shelter, oxygen,
+            warmth).
+          </p>,
+          <p className="body" key={5}>
+            Element 2 - Safety needs (Personal Security, Financial Security,
+            Health and Well-being, insurance - safety nets against accidents/illness.
+          </p>,
+          <p className="body" key={6}>
+            Element 3 - Social Belonging/Love (friendship, intimacy and family)
+            Having relationships and regular communication with others. Support
+            systems in play, the sense and feeling of being part of a community.
+          </p>,
+          <p className="body" key={7}>
+            Element 4 - Esteem (self-esteem, and seek esteem from others) Full
+            understanding of emotions including fear, sadness, loneliness,
+            happiness. Starting to fully accept one’s self.
+          </p>,
+          <p className="body" key={8}>
+            Element 5 - Self - Actualisation (Having true mastery over the
+            other elements, to truly think, learn, make decisions, have values
+            and beliefs that are all yours and not influenced by others.
+            A sense of obligation, and desire to help others. To find and
+            entertain the premise of their true calling)
+          </p>,
+          <h4 className="small-green-header" key={9}>
+            Action Steps
+          </h4>,
+          <p className="body" key={10}>
+            What does Self Actualisation look like for you right now?
+          </p>,
+          <p className="body" key={11}>
+            Write down your own definition for each of the 5 elements.
+            What does each element mean and represent to you?
+          </p>,
+          <p className="body" key={12}>
+            What does Self Actualisation look like for you in the future?
+          </p>,
+          <p className="body" key={13}>
+            Rewrite the 5 elements thinking about your aspirations for each element.
+          </p>,
+          <p className="body" key={14}>
+            The journey for you starts today. <span>LET'S GO!!!</span>
+          </p>,
+        ]
       }
     })
 
     const title = "MYP Boost! — Week One";
 
-    //this is an array and each element needs a comma after it
+    //appears before videos on the pages
     const firstSection = [
       <p className="body" key={1}>
         Welcome to MYP Boost! You have made a commitment to YOURSELF and to
@@ -224,7 +284,7 @@ export default class Week1 extends React.Component {
       <p className="body" key={2}>Let’s get to work!!!</p>,
     ]
 
-    //this is an array and each element needs a comma after it
+    //appears after videos on the pages
     const secondSection = [
       <p className="body" key={1}>
         Don’t forget to like Maximise Your Potential on&nbsp;

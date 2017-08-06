@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import Form from './containers/Form';
 import Results from './containers/Results';
-import Week1 from './components/Week1';
+import Week1 from './components/video-pages/Week1';
 import Footer from './components/Footer';
 
 const Router = () => (
