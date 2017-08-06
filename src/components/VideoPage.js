@@ -11,25 +11,27 @@ class VideoPage extends React.Component {
   }
 
   youtubeUrl(id) {
-    return "https://www.youtube.com/embed/" + id + "?ecver=1?modestbranding=1&autohide=1&showinfo=0&controls=1";
+    return "https://www.youtube.com/embed/" +
+           id +
+           "?ecver=1?modestbranding=1&autohide=1&showinfo=0&controls=1";
   }
 
   changePage(event, selectedPage) {
     event.preventDefault();
     this.currentPage = selectedPage;
-    this.forceUpdate()
+    this.forceUpdate();
   }
 
   renderIcon(name, imagePath, className) {
-    return ( 
+    return (
       <div key={name} className="icon">
         <p className={"title " + className}> {name} </p>
-        <img 
+        <img
           src={imagePath}
-          onClick={(event) => this.changePage(event, name)} 
+          onClick={(event) => this.changePage(event, name)}
         />
       </div>
-    )
+    );
   }
 
   renderIcons() {
@@ -49,7 +51,7 @@ class VideoPage extends React.Component {
         {this.renderIcons()}
         {this.props.secondSection}
       </div>
-    )
+    );
   }
 
   renderVideo() {
@@ -78,7 +80,7 @@ class VideoPage extends React.Component {
         </div>
         {info}
       </div>
-    )
+    );
   }
 
 

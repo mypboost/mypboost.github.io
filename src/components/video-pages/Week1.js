@@ -1,6 +1,5 @@
 import React from 'react';
 import Immutable from 'immutable';
-import PropTypes from 'prop-types';
 import VideoPage from '../VideoPage';
 
 //be sure to rename the class
@@ -265,7 +264,7 @@ export default class Week1 extends React.Component {
           </p>,
         ]
       }
-    })
+    });
 
     const title = "MYP Boost! — Week One";
 
@@ -282,7 +281,7 @@ export default class Week1 extends React.Component {
         to work on.
       </p>,
       <p className="body" key={2}>Let’s get to work!!!</p>,
-    ]
+    ];
 
     //appears after videos on the pages
     const secondSection = [
@@ -291,7 +290,7 @@ export default class Week1 extends React.Component {
         <a href="https://www.facebook.com/MYP.global/">Facebook</a> and join
         the closed Facebook MYP Boost group. <span>See you next week!</span>
       </p>
-    ]
+    ];
 
     return (
       <VideoPage
