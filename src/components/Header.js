@@ -24,8 +24,8 @@ class Header extends React.Component {
   render() {
     return (
       <div className="site-header" id='page-top-anchor'>
-        <img src="assets/logo/myp-logo.png" />
         {this.renderHamburger()}
+        <img src="assets/logo/myp-logo.png" />
       </div>
     );
   }

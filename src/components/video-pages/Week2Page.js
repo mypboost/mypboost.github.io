@@ -7,8 +7,8 @@ export default class Week2Page extends React.Component {
   render() {
     return (
       <SidebarPage>
-        <Week1 link="Week 1" />
         <Week2 link="Week 2"/>
+        <Week1 link="Week 1" />
       </SidebarPage>
     );
   }

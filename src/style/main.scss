@@ -1,4 +1,5 @@
 @import "./_colours";
+@import './_breakpoints';
 @import "./reset";
 
 html {
@@ -19,7 +20,6 @@ h1, h2, h3, h4, h5, p, a, button, li, ul, span {
   margin: 25px 0 35px;
   text-align: center;
   width: 100%;
-  overflow: hidden;
 }
 
 .hamburger-container {
@@ -27,16 +27,17 @@ h1, h2, h3, h4, h5, p, a, button, li, ul, span {
   width: 650px;
   margin: auto;
   text-align: left;
+}
 
-  .hamburger {
-    cursor: pointer;
-    position: relative;
-    bottom: 49;
-    font-size: 34px;
+.hamburger {
+  cursor: pointer;
+  position: relative;
+  top: 17;
+  font-size: 34px;
+  display: inline-block;
 
-    &:hover {
-      color: $lime;
-    }
+  &:hover {
+    color: $lime;
   }
 }
 
@@ -71,11 +72,8 @@ h1, h2, h3, h4, h5, p, a, button, li, ul, span {
   line-height: 21px;
 }
 
-a.lime-button {
-  text-decoration: none;
-}
-
 .lime-button {
+  text-decoration: none;
   background-color: $lime;
   font-weight: 600;
   font-size: 14px;
@@ -105,3 +103,42 @@ a.lime-button {
     background-color: $lime;
   }
 }
+
+@media screen and (max-width: $tablet-break) {
+  .hamburger {
+    left: 10;
+  }
+}
+
+@media screen and (max-width: $mobile-break) {
+  .site-header{
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    margin-bottom: 26px;
+    display: flex;
+  }
+
+  .hamburger-container {
+    height: initial;
+    width: initial;
+  }
+
+  .hamburger {
+    position: static;
+  }
+}
+
+
+@media screen and (max-width: 410px) {
+  .site-header{
+    max-width: 275px;
+
+    img {
+      max-width: 218.4px;
+      max-height: 46.15px;
+    }
+  }
+}
+
