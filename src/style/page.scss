@@ -8,6 +8,7 @@
   margin: auto;
   padding: 50px;
   border-radius: 4px;
+
   @media screen and (max-width: $mobile-break) {
       border: none;
       border-top: 1px solid white;

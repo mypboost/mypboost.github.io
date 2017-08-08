@@ -1,4 +1,5 @@
 @import "./_colours";
+@import './_breakpoints';
 
 .video-page {
   .purple { 
@@ -46,6 +47,14 @@
     a { 
       color: $blue;
       &:hover { color: $darker-blue; }
+    }
+   }
+
+  .lime { 
+    color: $lime;
+    a { 
+      color: $lime;
+      &:hover { color: $darker-lime; }
     }
    }
 
@@ -112,3 +121,12 @@
     }
   }
 }
+
+@media screen and (max-width: $mobile-break) {
+  .video-index-wrapper {
+    .icon {
+      width: 100%;
+    }
+  }
+}
+

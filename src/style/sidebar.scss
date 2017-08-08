@@ -45,14 +45,14 @@ $sidebar-width: 280px;
     }
   }
 
-  .open {
+  .sidebar-open {
     display: block;
     animation-name: menu-open;
     animation-duration: 500ms;
     animation-fill-mode: forwards;
    }
 
-  .closed {
+  .sidebar-closed {
     display: block;
     animation-name: menu-closed;
     animation-duration: 500ms;
