@@ -13,7 +13,7 @@ export default class Week2 extends React.Component {
         </p>
         <p className="body">
           Let’s start to break down why you want to make improvements
-          in your life along through Fitness dimension?
+          through your fitness dimension.
         </p>
         <h4 className="small-green-header">
           Action Steps
@@ -28,7 +28,7 @@ export default class Week2 extends React.Component {
            this form
           </a>
           &nbsp;When completing the document, take time and think about
-          exactly how, where and why you want your fitness to change.
+          exactly how, where and why you want your fitness to change?
           Once you identify where you want to be, the plan to get there
           will begin to form.
         </p>
@@ -42,7 +42,7 @@ export default class Week2 extends React.Component {
       <div className="video-content">
         <p className="body">
           The purpose of this video and associated information is to arm individuals
-          with the knowledge and understanding of what symptoms to look out for.
+          with the knowledge and understanding of which symptoms to look out for.
           Mental Health issues affect 1 in 4 of the UK population, so if it’s not
           you, it’s definitely someone you know. Start to be a little more self-aware
           and mindful of those you come in contact with.
@@ -119,7 +119,7 @@ export default class Week2 extends React.Component {
           <span>Journal/planning entry (morning)</span><br />
           “Today I am going to make a point of when I drop my children off
           at the nursery I am going to speak to, and genuinely ask about how
-          people are feel, use manners, hold doors and be respectful. I
+          people are, use manners, hold doors and be respectful. I
           am aware the children may or may not see these actions. If they
           don’t, someone else may see, I am actually going to be a nice
           person and If they do see, it a bonus. I want it to become
@@ -153,8 +153,8 @@ export default class Week2 extends React.Component {
         </h4>
         <p className="body">
           1. Make a list of all of the reasons you go to work, why you
-          like your job, why you do your job.<br />
-          2. Make a list of the negatives aspects (the cons) of your
+          like your job, why you do your job?<br />
+          2. Make a list of the negative aspects (the cons) of your
           current employment position.<br />
           3. Write down what your ideal job looks like? We want you to
           get specific with regards to this aspect. Take time out of
@@ -194,7 +194,7 @@ export default class Week2 extends React.Component {
         </h4>
         <p className="body">
           Complete a budget review, where is the money going, what
-          is considered excess, or where is money being spent, that you
+          is considered excess, or where is money being spent that you
           can instantly make a change towards today.
         </p>
         <p className="body">
@@ -248,8 +248,8 @@ export default class Week2 extends React.Component {
           of the MYP dimensions.<br />
         </p>
         <p className="body">
-          Remember nobody knows you, understand you better than you.
-          So take time to get to know YOU!
+          Remember nobody knows you, understands you better than you.
+          So take the time to get to know YOU!
         </p>
       </div>
     );
