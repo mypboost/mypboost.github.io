@@ -5,6 +5,7 @@ import Form from './containers/Form';
 import Results from './containers/Results';
 import Week1 from './components/video-pages/Week1Page';
 import Week2 from './components/video-pages/Week2Page';
+import Week3 from './components/video-pages/Week3Page';
 
 const Router = () => (
   <BrowserRouter>
@@ -13,6 +14,7 @@ const Router = () => (
       <Route exact path="/results.html" component={Results}/>
       <Route exact path="/ahaon.html" component={Week1}/>
       <Route exact path="/deux.html" component={Week2}/>
+      <Route exact path="/tres.html" component={Week3}/>
     </div>
   </BrowserRouter>
 );

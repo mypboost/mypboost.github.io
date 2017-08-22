@@ -89,6 +89,16 @@ h1, h2, h3, h4, h5, p, a, button, li, ul, span {
   }
 }
 
+strong {
+  font-weight: bold;
+}
+
+blockquote {
+  font-style: italic;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+
 .white-button {
   background-color: white;
   font-weight: 600;
