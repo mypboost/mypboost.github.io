@@ -17,6 +17,10 @@ import '../style/form.scss';
 
 class Form extends React.Component {
 
+  goToBig6Info() {
+    this.props.history.push('/big6.html');
+  }
+
   submitForm(event){
     event.preventDefault();
     this.props.onFormSubmit();
@@ -135,8 +139,14 @@ class Form extends React.Component {
 
             <p className="body section-two-text">
               Using the sliders below, please tell us where you’d currently rank
-              yourself (on a scale of 0-1000) in each of our MYP BIG6 Life
-              Dimensions and your overall happiness.
+              yourself (on a scale of 0-1000) in each of our&nbsp;
+              <span
+                onClick={this.goToBig6Info.bind(this)}
+                className={"big-six-link"}
+              >
+                MYP BIG6 Life Dimensions&nbsp;
+              </span>
+               and your overall happiness.
             </p>
 
             <Sliders

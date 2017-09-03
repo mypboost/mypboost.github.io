@@ -44,3 +44,12 @@
   margin-top: -15px;
   margin-bottom: 40px;
 }
+
+.big-six-link {
+  color: $lime;
+  cursor: pointer;
+
+  &:hover {
+    color: $purple;
+  }
+}
