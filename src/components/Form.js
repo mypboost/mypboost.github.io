@@ -60,9 +60,20 @@ class Form extends React.Component {
         <Page>
           <h2 className="large-header">MYPCo. Lite Score Generator</h2>
           <p className="body form-intro-text">
-            Welcome to MYP Boost! YOU have made a commitment to YOURSELF and to those
-            who are close to YOU. The key to MYP and YOUR success is the application of
-            small consistent steps applied daily to YOUR routine.
+            Welcome to MYP, you are a few clicks away from discovering your MYPCo score,
+            this is your score across all of the&nbsp;
+            <span
+              onClick={this.goToBig6Info.bind(this)}
+              className={"big-six-link"}
+            >
+              MYP BIG6 Life Dimensions
+            </span>
+            . Showing how you are performing relative to your global peers and also against
+            your own aspirations.
+            <br /><br />
+            To top it all off, we will identify where you should start your journey towards
+            maximising your potential. We will recommend three dimensions that you should start
+            focusing on and improving in straight away. Lets Go!
           </p>
 
           <Divider className="step-1-divider">
